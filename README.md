@@ -15,3 +15,7 @@ Before publishing set `CONFIG.whatsappNumber` (international digits without +) i
 - Kept all product, filters, enquiries, animations and layouts working.
 - Images are still **reference equipment photography**, not newly taken centre photographs. The source N5 image is low-resolution and therefore cannot be made natively sharp by enlargement.
 - For publication, replace temporary third-party catalogue images with photographs for which Nuga Best Thika Road has permission. Confirm the E5 selling price and WhatsApp number before publication.
+
+
+## N5 photo update (11 November 2026)
+The N5 bed image in the shop, homepage, therapy and about pages now uses `assets/n5-enhanced.webp`, created from the approved enhanced image. This image is an AI-enhanced illustrative rendering, not a verified photograph of the actual centre or item. It replaces the previous pixelated N5 screenshot crops. The rest of the website has been retained.
