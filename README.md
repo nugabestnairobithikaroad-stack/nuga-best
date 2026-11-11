@@ -31,3 +31,12 @@ A lightweight, responsive website built with HTML, CSS and JavaScript. No framew
 Open `script.js`, find the `products` array and edit each object's `name`, `category`, `price`, `description`, or `img`. Prices are numbers without commas. For unknown prices, use `null`.
 
 The site uses hash navigation (`#shop`, `#therapy` etc.), compatible with static GitHub Pages hosting and with no server configuration.
+
+
+## Product photo accuracy (important)
+
+The site lists all 11 products from the customer-supplied price lists. The bundled photographs are small reference crops from the customer's own supplied website-design screenshots (not verified original high-resolution studio photography). Images are provided for N5, NM2500, NM90 and E5 only. Other models intentionally use labelled placeholders rather than misleading substitute images. Hero photography is also reference artwork from supplied screenshots, not documentation of the actual Thika Road centre.
+
+To replace a product photograph with your original authorised high-resolution file: put an optimised WebP image in `assets/` (for example `t20.webp`), then find that model in the `products` array in `script.js` and replace `img:null` with `img:'assets/t20.webp'`. For N5, NM2500, NM90 and E5, you can replace the existing files with better original photographs under the same filenames. Use originals from your own Facebook page or obtain distributor permission before commercial publication. Use WebP 1000–1400px wide, ideally under 200 KB per product.
+
+**Prices requiring business confirmation:** E5 is KES 137,800 in one supplied list and KES 140,400 in the other. NM2500 has no supplied price. **WhatsApp configuration:** add the verified number to `CONFIG.whatsappNumber` in `script.js`.

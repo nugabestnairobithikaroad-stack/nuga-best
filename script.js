@@ -3,23 +3,23 @@
 const CONFIG = { whatsappNumber: '' };
 const products = [
   {id:'n5',name:'N5 Thermal Massage Bed',category:'Beds',price:518700,usd:3990,img:'assets/n5.webp',description:'Full-body thermal massage bed with guided heat and massage features.'},
-  {id:'t20',name:'T20 Therapy Mat',category:'Mats',price:175500,usd:1350,img:'assets/nm2500.webp',illustrative:true,description:'A therapy mat for comfortable warmth and relaxation. Image is illustrative.'},
+  {id:'t20',name:'T20 Therapy Mat',category:'Mats',price:175500,usd:1350,img:null,description:'Full-size T20 warming mat for home relaxation. Exact product photo pending.'},
   {id:'nm2500',name:'NM2500 Tourmanium Single Mat',category:'Mats',price:null,usd:null,img:'assets/nm2500.webp',description:'Single-person tourmanium thermal mat. Contact us for a quotation.'},
   {id:'mhp100',name:'MHP-100 NDT Shoulder Mat',category:'Mats',price:63700,usd:490,img:null,description:'Shoulder-focused thermal mat for warmth and comfort.'},
   {id:'nm80',name:'NM80 Tourmanium Small Mat',category:'Mats',price:65000,usd:500,img:null,description:'Compact thermal mat designed for targeted comfort.'},
   {id:'nm90',name:'NM-90 NDT Waist Belt',category:'Supports',price:50700,usd:390,img:'assets/nm90.webp',description:'Wearable thermal belt for comfortable warmth around the waist.'},
-  {id:'t9',name:'T9 Multifunctional Thermal Belt',category:'Supports',price:71500,usd:550,img:'assets/nm90.webp',illustrative:true,description:'Multifunctional thermal support belt. Image is illustrative.'},
+  {id:'t9',name:'T9 Multifunctional Thermal Belt',category:'Supports',price:71500,usd:550,img:null,description:'Multifunctional warming belt. Exact T9 photograph pending.'},
   {id:'e5',name:'E5 Foot Massager',category:'Massagers',price:137800,usd:1060,img:'assets/e5.webp',description:'Foot massage equipment designed for a relaxing home routine.'},
   {id:'stones',name:'Tourmanium Stones (4 pieces)',category:'Accessories',price:1200,usd:null,img:null,description:'Pack of four tourmanium stones.'},
   {id:'bottle',name:'Tourmanium Water Bottle',category:'Accessories',price:12740,usd:98,img:null,description:'Tourmanium accessory water bottle.'},
-  {id:'pillow',name:'Tourmaline Pillow NM-30',category:'Accessories',price:25740,usd:198,img:null,description:'Tourmaline pillow for everyday comfort.'}
+  {id:'pillow',name:'Tourmanium Pillow NM-30',category:'Accessories',price:25740,usd:198,img:null,description:'Tourmaline pillow for everyday comfort.'}
 ];
 const els={menu:document.getElementById('menuToggle'),nav:document.getElementById('mainNav'),dialog:document.getElementById('enquiryDialog'),message:document.getElementById('messageDialog')};
 let currentProduct=null,currentCategory='All',prepared='';
 const money=n=>n===null?'Price on enquiry':'KES '+n.toLocaleString('en-KE');
 function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function art(p){return p.img?`<img loading="lazy" src="${p.img}" alt="${safe(p.name)}${p.illustrative?' (illustrative photo)':''}">`:'<div class="fallback-art" role="img" aria-label="Product photograph coming soon">✧</div>';}
-function card(p){return `<article class="product-card"><div class="product-image">${art(p)}${p.illustrative?'<span class="badge-new">Illustrative image</span>':''}</div><div class="product-details"><div class="product-type">${p.category}</div><h3>${safe(p.name)}</h3><p>${safe(p.description)}</p><div class="product-bottom"><span class="product-price">${p.price===null?'<small>Price on enquiry</small>':money(p.price)}</span><button class="small-enquire" data-product="${p.id}" aria-label="Enquire about ${safe(p.name)}">Enquire ↗</button></div></div></article>`;}
+function art(p){return p.img?`<img loading="lazy" src="${p.img}" alt="Reference photograph for ${safe(p.name)}">`:`<div class="fallback-art photo-pending" role="img" aria-label="Verified photograph not yet available for ${safe(p.name)}"><span class="pending-symbol">▧</span><span>Original ${safe(p.id.toUpperCase())} photo<br>coming soon</span></div>`;}
+function card(p){return `<article class="product-card"><div class="product-image">${art(p)}${p.img?'<span class="photo-tag">Product reference</span>':'<span class="photo-tag pending-tag">Photo pending</span>'}</div><div class="product-details"><div class="product-type">${p.category}</div><h3>${safe(p.name)}</h3><p>${safe(p.description)}</p><div class="product-bottom"><span class="product-price">${p.price===null?'<small>Price on enquiry</small>':money(p.price)}</span><button class="small-enquire" data-product="${p.id}" aria-label="Enquire about ${safe(p.name)}">Enquire ↗</button></div></div></article>`;}
 function renderProducts(){const term=document.getElementById('searchProducts').value.toLowerCase().trim();const list=products.filter(p=>(currentCategory==='All'||p.category===currentCategory)&&(p.name+' '+p.description).toLowerCase().includes(term));document.getElementById('allProducts').innerHTML=list.map(card).join('');document.getElementById('productCount').textContent=`Showing ${list.length} of ${products.length} products`;document.getElementById('noProducts').hidden=list.length!==0;}
 document.getElementById('featuredProducts').innerHTML=[products[0],products[2],products[7]].map(card).join('');renderProducts();
 document.getElementById('filters').addEventListener('click',e=>{const chip=e.target.closest('[data-filter]');if(!chip)return;currentCategory=chip.dataset.filter;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('selected',c===chip));renderProducts();});
