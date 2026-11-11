@@ -45,3 +45,7 @@ To replace a product photograph with your original authorised high-resolution fi
 ## Animation update (November 2026)
 
 The website now features varied motion: staggered homepage text, floating wellness callout, soft background movement, scroll-reveal sections (four directions/scales), product hover zoom, feature-card lift, animated filter chips, smooth page entrances, modal transitions, and a scroll progress indicator. All run in native CSS/JavaScript without heavy animation libraries. `prefers-reduced-motion` is supported. No new product photos were invented or added.
+
+
+## Visual upgrade (11 November 2026)
+Package scenes are AI-generated illustrations (not evidence of actual centre or specific products). Product reference crops have been sharpened within their original resolution limits. Exact unverified product photos are replaced with polished illustrations rather than wrong-equipment images. Upload genuine HD authorised product photographs to replace all unverified artwork before commercial launch. No package pricing, treatment promises or availability have been invented.
