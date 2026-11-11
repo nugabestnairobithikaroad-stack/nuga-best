@@ -35,3 +35,55 @@ document.getElementById('dialogForm').addEventListener('submit',e=>{e.preventDef
 document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget);const msg=`Hello Nuga Best Thika Road,\nName: ${f.get('name')}\nPhone: ${f.get('phone')}\nInterest: ${f.get('interest')}\nMessage: ${f.get('message')||'Please contact me.'}`;prepareMessage(msg);});
 document.getElementById('copyMessage').addEventListener('click',async e=>{try{await navigator.clipboard.writeText(prepared);e.currentTarget.textContent='✓ Copied to clipboard';setTimeout(()=>e.currentTarget.textContent='Copy Message',2500);}catch{document.getElementById('preparedMessage').select();document.execCommand('copy');e.currentTarget.textContent='Select and copy your message';}});
 document.getElementById('year').textContent=new Date().getFullYear();
+
+
+/* Progressive motion: enhancements only; content remains visible if JS is off. */
+(function enableMotion(){
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const header=document.querySelector('.site-header');
+  const progress=document.createElement('div');
+  progress.className='reading-progress';progress.setAttribute('aria-hidden','true');
+  header.appendChild(progress);
+  let ticking=false;
+  function updateProgress(){
+    const max=document.documentElement.scrollHeight-window.innerHeight;
+    progress.style.transform=`scaleX(${max>0?Math.max(0,Math.min(1,window.scrollY/max)):0})`;
+    ticking=false;
+  }
+  window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateProgress)}},{passive:true});
+  window.addEventListener('resize',updateProgress);
+  let observer;
+  const revealGroups=[
+    ['.section-heading, .page-heading, .shop-hero .wrap, .inner-grid>div:first-child','reveal-up'],
+    ['.feature-card:nth-child(odd), .about-img, .split-banner>div:first-child, .inner-photo','reveal-left'],
+    ['.feature-card:nth-child(even), .about-copy, .quote-panel','reveal-right'],
+    ['.benefits>div, .product-card, .therapy-benefits article, .steps>div, .insight-card, .values>div, .equipment-row img, .contact-line, .contact-form-wrap','reveal-scale']
+  ];
+  function refreshReveals(){
+    if(reduced.matches)return;
+    const visiblePage=document.querySelector('.page.active');
+    if(!visiblePage)return;
+    if(observer)observer.disconnect();
+    const targets=[];
+    revealGroups.forEach(([selector,style])=>visiblePage.querySelectorAll(selector).forEach((node,index)=>{
+      node.classList.add(style);
+      node.style.setProperty('--reveal-delay',`${Math.min(index%4,3)*65}ms`);
+      if(!node.classList.contains('in-view'))targets.push(node);
+    }));
+    observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target)}
+    }),{threshold:.09,rootMargin:'0px 0px 45px 0px'});
+    targets.forEach(el=>observer.observe(el));
+  }
+  if(!reduced.matches)document.documentElement.classList.add('motion-ready');
+  refreshReveals();updateProgress();
+  // Re-observe newly displayed page content and newly filtered product cards.
+  window.addEventListener('hashchange',()=>requestAnimationFrame(()=>{refreshReveals();updateProgress()}));
+  const productsNode=document.getElementById('allProducts');
+  new MutationObserver(()=>requestAnimationFrame(refreshReveals)).observe(productsNode,{childList:true});
+  reduced.addEventListener('change',e=>{
+    document.documentElement.classList.toggle('motion-ready',!e.matches);
+    if(e.matches){observer?.disconnect();document.querySelectorAll('.reveal-up,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>el.classList.add('in-view'))}
+    else refreshReveals();
+  });
+})();

@@ -40,3 +40,8 @@ The site lists all 11 products from the customer-supplied price lists. The bundl
 To replace a product photograph with your original authorised high-resolution file: put an optimised WebP image in `assets/` (for example `t20.webp`), then find that model in the `products` array in `script.js` and replace `img:null` with `img:'assets/t20.webp'`. For N5, NM2500, NM90 and E5, you can replace the existing files with better original photographs under the same filenames. Use originals from your own Facebook page or obtain distributor permission before commercial publication. Use WebP 1000–1400px wide, ideally under 200 KB per product.
 
 **Prices requiring business confirmation:** E5 is KES 137,800 in one supplied list and KES 140,400 in the other. NM2500 has no supplied price. **WhatsApp configuration:** add the verified number to `CONFIG.whatsappNumber` in `script.js`.
+
+
+## Animation update (November 2026)
+
+The website now features varied motion: staggered homepage text, floating wellness callout, soft background movement, scroll-reveal sections (four directions/scales), product hover zoom, feature-card lift, animated filter chips, smooth page entrances, modal transitions, and a scroll progress indicator. All run in native CSS/JavaScript without heavy animation libraries. `prefers-reduced-motion` is supported. No new product photos were invented or added.

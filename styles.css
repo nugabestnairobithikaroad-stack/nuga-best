@@ -3,3 +3,72 @@
 
 /* Product-photo quality and transparency */
 .catalogue-trust{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;padding:16px 20px;border:1px solid #f0e2e8;border-radius:14px;background:#fcf8f9;color:#751038;font-size:12px;font-weight:700}.catalogue-trust span{margin-right:15px}.photo-pending{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;text-align:center;background:linear-gradient(145deg,#f9f5f2,#f2e8eb);color:#765a68;height:100%;font-size:13px;font-weight:700;line-height:1.5;padding:20px}.pending-symbol{font-size:42px;color:#b898a5;font-weight:400}.product-image{position:relative}.photo-tag{position:absolute;left:13px;top:12px;display:inline-block;padding:5px 9px;border-radius:100px;background:#ffffffec;color:#71213e;font-size:10px;font-weight:800;box-shadow:0 2px 12px #33102214}.pending-tag{background:#fceadf;color:#855033}.product-image img{object-fit:contain!important;padding:12px;background:#faf7f5}.product-card{overflow:hidden}@media(max-width:570px){.catalogue-trust{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:10px;padding:14px}.catalogue-trust span{margin:0}}
+
+
+/* Motion system v3 — premium, varied and intentionally restrained */
+:root{--ease-luxe:cubic-bezier(.22,1,.36,1);--ease-smooth:cubic-bezier(.2,.8,.2,1)}
+/* A slim progress indicator travels underneath the sticky navigation */
+.reading-progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,#b7798d,#79143e,#d9a2b3);transform:scaleX(0);transform-origin:left;pointer-events:none;z-index:5;transition:transform .12s linear}
+/* A soft kinetic light sweep gives the hero polish without hiding its imagery */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-40%;left:-25%;width:58%;height:170%;pointer-events:none;z-index:-1;background:radial-gradient(ellipse,rgba(241,209,218,.55) 0%,transparent 68%);animation:heroGlow 12s ease-in-out infinite alternate}
+@keyframes heroGlow{from{transform:translate3d(-8%,0,0) rotate(-9deg)}to{transform:translate3d(24%,5%,0) rotate(8deg)}}
+.hero-copy .eyebrow{animation:heroIntro .8s var(--ease-luxe) both}
+.hero-copy h1{animation:heroIntro .95s .13s var(--ease-luxe) both}
+.hero-copy>p{animation:heroIntro .95s .25s var(--ease-luxe) both}
+.hero-copy .hero-actions{animation:heroIntro .95s .36s var(--ease-luxe) both}
+.hero-foot{animation:heroIntro .95s .49s var(--ease-luxe) both}
+.hero-visual{animation:heroVisual 1.15s .18s var(--ease-luxe) both}
+.hero-float{animation:floatCard 5s ease-in-out infinite}
+@keyframes heroIntro{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroVisual{from{opacity:0;transform:translate(28px,14px) scale(.94);filter:blur(5px)}to{opacity:1;transform:translate(0,0) scale(1);filter:blur(0)}}
+@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+/* Different section types get different entrance treatments */
+.motion-ready .reveal-up:not(.in-view){opacity:0;transform:translateY(32px)}
+.motion-ready .reveal-left:not(.in-view){opacity:0;transform:translateX(-38px)}
+.motion-ready .reveal-right:not(.in-view){opacity:0;transform:translateX(38px)}
+.motion-ready .reveal-scale:not(.in-view){opacity:0;transform:scale(.94)}
+.motion-ready .reveal-up,.motion-ready .reveal-left,.motion-ready .reveal-right,.motion-ready .reveal-scale{transition:opacity .8s var(--ease-luxe),transform .8s var(--ease-luxe);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .in-view{opacity:1;transform:none}
+.page.active{animation:pageAppear .45s var(--ease-luxe) both}
+@keyframes pageAppear{from{opacity:.55;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+/* Hero headline accent underline grows on load */
+.hero-copy h1 em{position:relative;white-space:nowrap}
+.hero-copy h1 em::after{content:"";height:5px;position:absolute;left:2px;right:0;bottom:-5px;border-radius:12px;background:#cc98a9;opacity:.55;transform:scaleX(0);transform-origin:left;animation:underlineDraw 1s .95s var(--ease-luxe) both}
+@keyframes underlineDraw{to{transform:scaleX(1)}}
+/* Product cards: coordinated lift and photographic zoom */
+.product-card{will-change:auto;transition:transform .45s var(--ease-luxe),box-shadow .45s ease,border-color .3s}
+.product-card:hover{transform:translateY(-9px);box-shadow:0 26px 62px rgba(80,20,48,.16);border-color:#dfb9c8}
+.product-image{overflow:hidden}
+.product-image img{transition:transform .7s var(--ease-luxe),filter .7s}
+.product-card:hover .product-image img{transform:scale(1.075)}
+.product-card .small-enquire{transition:transform .25s,background .25s}
+.product-card:hover .small-enquire{transform:translateX(2px)}
+/* Discovery sections, thumbnails and feature images move independently */
+.feature-card,.insight-card,.therapy-benefits article,.values>div{transition:transform .4s var(--ease-luxe),box-shadow .4s,border-color .4s}
+.feature-card:hover,.insight-card:hover,.therapy-benefits article:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(78,20,43,.1)}
+.feature-image,.about-img,.inner-photo{overflow:hidden}
+.feature-image img,.about-img img,.inner-photo img{transition:transform .9s var(--ease-luxe)}
+.feature-card:hover .feature-image img,.about-img:hover img,.inner-photo:hover img{transform:scale(1.045)}
+.equipment-row img{transition:transform .45s var(--ease-luxe),box-shadow .45s}
+.equipment-row img:hover{transform:translateY(-6px) scale(1.035);box-shadow:0 15px 35px #4510241d}
+/* Buttons respond to direct interaction without perpetual distractions */
+.btn{position:relative;overflow:hidden;transition:transform .26s var(--ease-luxe),box-shadow .3s,background .3s,border-color .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 11px 28px #6b17442a}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn-primary::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.19) 50%,transparent 75%);transform:translateX(-140%);transition:transform .7s ease}
+.btn-primary:hover::after{transform:translateX(140%)}
+.chip{transition:background .25s,color .25s,border-color .25s,transform .25s}
+.chip:hover{transform:translateY(-2px)}
+.chip.selected{animation:chipSelect .28s var(--ease-luxe)}
+@keyframes chipSelect{0%{transform:scale(.94)}70%{transform:scale(1.04)}100%{transform:scale(1)}}
+/* Session journey milestones have staggered rising circles */
+.steps i{transition:transform .45s var(--ease-luxe),background .3s}
+.steps>div:hover i{transform:translateY(-5px) rotate(-6deg);background:#eacbd8}
+/* Dialog glides gently into view */
+dialog.modal[open]{animation:modalIn .35s var(--ease-luxe) both}
+@keyframes modalIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+/* Navigation stays accessible, with visible focus */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #c58aab;outline-offset:3px}
+@media(max-width:850px){.hero-visual{animation-duration:.8s}.motion-ready .reveal-left:not(.in-view),.motion-ready .reveal-right:not(.in-view){transform:translateY(22px)}}
+@media(prefers-reduced-motion:reduce){.hero::before,.hero-copy .eyebrow,.hero-copy h1,.hero-copy>p,.hero-copy .hero-actions,.hero-foot,.hero-visual,.hero-float,.hero-copy h1 em::after,.page.active,dialog.modal[open]{animation:none!important}.hero-copy h1 em::after{transform:scaleX(1)!important}.motion-ready .reveal-up:not(.in-view),.motion-ready .reveal-left:not(.in-view),.motion-ready .reveal-right:not(.in-view),.motion-ready .reveal-scale:not(.in-view){opacity:1!important;transform:none!important}}
