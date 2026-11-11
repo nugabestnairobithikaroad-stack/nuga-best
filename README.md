@@ -49,3 +49,7 @@ The website now features varied motion: staggered homepage text, floating wellne
 
 ## Visual upgrade (11 November 2026)
 Package scenes are AI-generated illustrations (not evidence of actual centre or specific products). Product reference crops have been sharpened within their original resolution limits. Exact unverified product photos are replaced with polished illustrations rather than wrong-equipment images. Upload genuine HD authorised product photographs to replace all unverified artwork before commercial launch. No package pricing, treatment promises or availability have been invented.
+
+
+## Clarity revision
+Screenshot-derived product photographs have been cropped to remove captured webpage captions and adjusted for contrast. This improves presentation but cannot restore missing original detail. Products lacking verified model photos now have clearly labelled vector illustrations specific to their product type. Package images remain illustrative. Do not substitute the illustrations for genuine product photos without review.
