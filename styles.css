@@ -25,3 +25,6 @@ a{text-decoration:none;color:inherit} .wrap{width:var(--wrap);margin:auto}
 .product-card .price-small,.card .price{font-variant-numeric:tabular-nums}
 .product-meta{flex-wrap:wrap}
 @media(max-width:720px){.photo-price{left:10px;bottom:10px;font-size:.8rem;padding:7px 10px}}
+
+/* Only a single price in the bottom of each product card. */
+.photo-price{display:none!important}
