@@ -1,11 +1,18 @@
-NUGA BEST THIKA ROAD — PRICE LABEL UPDATE
+# Nuga Best Thika Road — Animated Website
 
-Open index.html or deploy this complete folder to GitHub Pages. Each product image now has an individual price badge, alongside the price in its listing.
+This ZIP contains the complete static website, real supplied equipment photos, single-price product cards, and lightweight CSS/JavaScript animations.
 
-Unconfirmed prices: NM2500 Tourmanium Single Mat and NM-70 Knee Cap (no amounts supplied).
+## Publish
+Upload `index.html`, `styles.css`, `script.js` and the entire `assets` folder to the root of your GitHub Pages repository.
 
-Conflicting E5 amounts in supplied lists: KES 137,800 vs 140,400. Currently shown: KES 137,800, pending confirmation.
+## Animations
+- Hero text and photograph entrance
+- Scroll-triggered section reveals
+- Staggered product card entrance and hover lift
+- Gentle image zoom on hover
+- Animated navigation underline and button feedback
+- Respect for `prefers-reduced-motion`
 
-All images originate from the user-provided materials.
+No external animation library or external image dependency.
 
-UPDATE: Removed duplicate price badges overlaying product images. Each product displays its price once, beside the enquiry button.
+Note: Product prices previously marked as needing confirmation remain unchanged. Contact enquiry submission is not connected to a backend or WhatsApp number.

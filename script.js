@@ -25,3 +25,30 @@ function applyFilters(){const q=(search?.value||'').toLowerCase().trim();const c
 chips.forEach(ch=>ch.addEventListener('click',()=>{chips.forEach(c=>c.classList.remove('active')); ch.classList.add('active'); applyFilters();})); if(search) search.addEventListener('input',applyFilters);
 const menuToggle=document.getElementById('menuToggle'); const menu=document.getElementById('menu'); if(menuToggle) menuToggle.addEventListener('click',()=>menu.classList.toggle('mobile-open'));
 document.querySelectorAll('[data-book]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault(); location.hash='contact'; document.getElementById('name')?.focus();}));
+
+
+// Scroll reveal: elements remain visible when IntersectionObserver is unavailable.
+(function initNugaMotion(){
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
+    });
+  }, {threshold:0.09, rootMargin:'0px 0px -25px 0px'});
+  const register = (root=document) => {
+    root.querySelectorAll('.section-head,.feature,.wellness-photo,.wellness-copy,.mini,.product-card,.insight,.about-img,.about-copy,.contact-card,.card:not(.feature)').forEach((el,i)=>{
+      if(el.dataset.nugaAnimated)return;
+      el.dataset.nugaAnimated='1';
+      // Avoid hiding content above the fold until the observer has a chance to run.
+      el.style.setProperty('--reveal-delay', (i%4)*85+'ms');
+      el.classList.add('reveal-ready');observer.observe(el);
+    });
+  };
+  register();
+  // Shop filtering creates new cards; observe these too.
+  const productRoot = document.getElementById('shopProducts');
+  if(productRoot && 'MutationObserver' in window){
+    new MutationObserver(()=>register(productRoot)).observe(productRoot,{childList:true});
+  }
+})();
