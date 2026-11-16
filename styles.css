@@ -102,3 +102,6 @@ main > [data-page]{scroll-margin-top:90px}
 body{min-height:100vh}
 nav.nav-links a.active{color:var(--gold-bright)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+/* Two remaining editorial insights for the remaining editorial content. */
+@media(min-width:981px){.insights-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1030px;margin-left:auto;margin-right:auto}}

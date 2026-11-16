@@ -9,7 +9,6 @@ const products=[
 {name:'NM-90 NDT Waist Belt',category:'Supports',price:'KES 50,700',desc:'Wearable thermal belt for comfortable warmth around the waist.',image:'assets/waist.webp'},
 {name:'T9 Multi Functional Thermal Belt',category:'Supports',price:'KES 71,500',desc:'Personal heating device for targeted comfort.',image:'assets/t9.webp'},
 {name:'E5 Foot Massager',category:'Massagers',price:'KES 137,800',desc:'Thermal foot massager designed for relaxing home use.',image:'assets/e5.webp'},
-{name:'NM-70 Knee Cap',category:'Supports',price:'Confirm price',desc:'Warming knee support for everyday comfort.',image:'assets/nm70.webp'},
 {name:'Tourmanium Stones (4 stones)',category:'Accessories',price:'KES 1,200',desc:'Set of four tourmanium stones.',image:'assets/stones.webp'},
 {name:'Tourmanium Water Bottle',category:'Accessories',price:'KES 12,740',desc:'Nuga Best blue tourmanium water bottle.',image:'assets/bottle.webp'},
 {name:'Tourmaline Pillow NM-30',category:'Accessories',price:'KES 25,740',desc:'Tourmanium pillow for everyday comfort.',image:'assets/pillow.webp'}
