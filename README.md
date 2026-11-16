@@ -1,16 +1,18 @@
-# Nuga Best Thika Road – full banner website update
+# Nuga Best Thika Road — Complete VIP Website
 
-Open `index.html` to preview the complete website. For GitHub Pages, upload **all contents of this ZIP into the repository root**, keeping `assets/` alongside `index.html`, `styles.css`, and `script.js`.
+This is the **complete working website**, not an image mockup.
 
-## What's changed
-- The user-selected navy, gold, and cream banner is the homepage hero, with no image cropping.
-- The original image is in `assets/vip-homepage-original.png` (1882 × 836 pixels). Optimized high-quality `assets/vip-homepage.webp` is displayed on the website.
-- The banner's booking and shop button artwork has invisible clickable links on desktop; separately accessible real buttons are provided on mobile.
-- Original product catalogue, individual prices, category filtering (without All button), Wellness Insights full-image fix, and animations are retained.
+## Files
+- `index.html` — site content, accessible links and page sections
+- `styles.css` — premium navy, charcoal and gold design; responsive screens and animations
+- `script.js` — product catalogue, category filtering, search, mobile menu and enquiry drafting
+- `assets/` — user-supplied real equipment and promotional photographs, plus logo
 
-## Notes
-- Banner is a rendered marketing design (not a real photograph of the Thika Road centre). Verify model/product representation before using it as factual advertising.
-- Image is 1882 × 836, close to Full HD width. Do not stretch it beyond its intrinsic dimensions if pixel-perfect detail is required.
-- Contact form and booking actions require a real backend or official business contact number for actual submissions; on the current static site these remain demo front-end behaviour.
+## GitHub Pages
+Extract the ZIP and upload **the contents of this folder** (`index.html`, `styles.css`, `script.js`, `assets`) into the root of the GitHub Pages repository. Do not upload only the ZIP. In Settings → Pages, publish from the main branch/root if needed.
 
-After deploying, visit the **published website**, not your GitHub code page, and press **Ctrl + Shift + R**.
+## Important
+- No AI-generated equipment thumbnails were used. The original uploaded images vary in resolution. CSS preserves their proportions but cannot manufacture lost detail.
+- Product prices appear once per card. Unprovided prices are marked `Confirm price`. The E5 price remains provisionally KES 137,800.
+- The enquiry form prepares a message for copying. It **does not send messages automatically** and does not invent a WhatsApp telephone number. Add a confirmed business number and messaging integration before claiming real-time booking functionality.
+- Any references to comfort and relaxation are not claims of medical cure.
