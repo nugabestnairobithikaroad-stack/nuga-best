@@ -31,3 +31,74 @@
 .poster{height:auto;min-height:310px;padding:12px}
 .poster img{width:100%;height:auto;max-height:470px;object-fit:contain!important}
 @media(max-width:740px){.vip-hero{padding:15px 0 20px}.vip-shell{width:calc(100% - 20px)}.vip-artwork{border-radius:12px}.vip-hotspot{display:none}.vip-mobile-actions{display:flex}.vip-mobile-actions a{flex:1;min-width:130px;text-align:center}.poster img{max-height:none}}
+
+/* VIP horizontal navigation: each item in its own column, never wraps or drops down. */
+.header .navrow{display:flex;align-items:center;flex-wrap:nowrap;gap:clamp(10px,1.4vw,22px)}
+.header .brand{flex:0 0 auto;min-width:0}
+.header .nav-links{
+  display:grid!important;
+  grid-template-columns:repeat(6,max-content);
+  align-items:center;
+  justify-content:center;
+  gap:clamp(5px,.65vw,13px);
+  flex:1 1 auto;
+  min-width:0;
+  max-width:100%;
+  position:static!important;
+  padding:0!important;
+  margin:0;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  overflow-x:auto;
+  overflow-y:hidden;
+  white-space:nowrap;
+  scrollbar-width:thin;
+  scrollbar-color:var(--gold-border) transparent;
+  overscroll-behavior-x:contain;
+}
+.header .nav-links a{
+  display:flex;align-items:center;justify-content:center;
+  white-space:nowrap;
+  padding:10px clamp(7px,.65vw,13px);
+  border:1px solid rgba(218,181,109,.17);
+  border-radius:9px;
+  font-size:clamp(11px,.82vw,13px);
+  line-height:1.2;
+  min-height:40px;
+  background:rgba(255,255,255,.035);
+  flex-shrink:0;
+}
+.header .nav-links a.active{background:rgba(219,176,101,.12);border-color:var(--gold-border)}
+.header .nav-links a:after{bottom:3px;left:10px;right:10px}
+.header .nav-toggle{display:none!important}
+.header .nav-cta{flex:0 0 auto;white-space:nowrap}
+@media(max-width:1250px){
+  .header .navrow{gap:12px}
+  .header .nav-links{justify-content:start}
+  .header .nav-links a{padding:9px 10px}
+}
+@media(max-width:980px){
+  .header .navrow{flex-wrap:nowrap;gap:10px}
+  .header .brand strong{font-size:15px}
+  .header .brand small{font-size:8px;letter-spacing:.12em}
+  .header .brand img{width:42px;height:42px}
+  .header .nav-links{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:start;gap:7px;left:auto!important;right:auto!important;top:auto!important;box-shadow:none!important}
+  .header .nav-cta{padding:10px 12px;font-size:11px;margin-left:0}
+}
+@media(max-width:650px){
+  .header .navrow{gap:8px;min-height:70px}
+  .header .brand{gap:5px}
+  .header .brand img{width:36px;height:36px}
+  .header .brand strong{font-size:12px}
+  .header .brand small{font-size:7px;letter-spacing:.055em}
+  .header .nav-links a{font-size:11px;padding:9px 10px}
+  .header .nav-cta{display:none}
+}
+
+/* NAVIGATION AS SEPARATE VIEWS: one page shown at a time, no jumping down a long page. */
+main > [data-page][hidden]{display:none!important}
+main > [data-page]{scroll-margin-top:90px}
+body{min-height:100vh}
+nav.nav-links a.active{color:var(--gold-bright)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}

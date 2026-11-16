@@ -22,3 +22,13 @@ LIMITATIONS
 - The graphic banner is an AI-generated promotional illustration, not an actual photograph of the business premises.
 - The booking / product enquiry form prepares text for copying; no email or WhatsApp transport is connected.
 - The visually printed CTA buttons in the banner have aligned clickable regions on desktop, and real buttons directly below the image on mobile.
+
+
+Navigation update: The six top links remain in independent horizontal tabs. On smaller screens the link row scrolls sideways instead of dropping down. No dropdown menu.
+
+
+NAVIGATION UPDATE (2026-11-16)
+- Clicking Home, Therapy Services, Shop Products, Wellness Insights, About Us or Contact opens its own separate view.
+- No more scrolling down the homepage to reach a different section.
+- Browser Back and Forward work with #home, #shop, etc.
+- Existing single-price cards, category filters, genuine product photos, VIP banner and responsive menu retained.
