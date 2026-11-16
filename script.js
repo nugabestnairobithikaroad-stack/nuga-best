@@ -22,7 +22,8 @@ function renderShop(list){shopRoot.innerHTML=list.map(cardHTML).join('');documen
 if(shopRoot) renderShop(products);
 const search=document.getElementById('productSearch'); const chips=[...document.querySelectorAll('.chip')];
 function applyFilters(){const q=(search?.value||'').toLowerCase().trim();const cat=(document.querySelector('.chip.active')?.dataset.filter)||'All';let list=products.filter(p=> (cat==='All'||p.category===cat) && (p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q))); renderShop(list);}
-chips.forEach(ch=>ch.addEventListener('click',()=>{chips.forEach(c=>c.classList.remove('active')); ch.classList.add('active'); applyFilters();})); if(search) search.addEventListener('input',applyFilters);
+// Clicking an already selected category clears its filter and displays all products again.
+chips.forEach(ch=>ch.addEventListener('click',()=>{const wasActive=ch.classList.contains('active'); chips.forEach(c=>{c.classList.remove('active'); c.setAttribute('aria-pressed','false');}); if(!wasActive){ch.classList.add('active'); ch.setAttribute('aria-pressed','true');} applyFilters();})); if(search) search.addEventListener('input',applyFilters);
 const menuToggle=document.getElementById('menuToggle'); const menu=document.getElementById('menu'); if(menuToggle) menuToggle.addEventListener('click',()=>menu.classList.toggle('mobile-open'));
 document.querySelectorAll('[data-book]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault(); location.hash='contact'; document.getElementById('name')?.focus();}));
 

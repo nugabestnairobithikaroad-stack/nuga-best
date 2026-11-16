@@ -1,18 +1,16 @@
-# Nuga Best Thika Road — Animated Website
+# Nuga Best Thika Road – full banner website update
 
-This ZIP contains the complete static website, real supplied equipment photos, single-price product cards, and lightweight CSS/JavaScript animations.
+Open `index.html` to preview the complete website. For GitHub Pages, upload **all contents of this ZIP into the repository root**, keeping `assets/` alongside `index.html`, `styles.css`, and `script.js`.
 
-## Publish
-Upload `index.html`, `styles.css`, `script.js` and the entire `assets` folder to the root of your GitHub Pages repository.
+## What's changed
+- The user-selected navy, gold, and cream banner is the homepage hero, with no image cropping.
+- The original image is in `assets/vip-homepage-original.png` (1882 × 836 pixels). Optimized high-quality `assets/vip-homepage.webp` is displayed on the website.
+- The banner's booking and shop button artwork has invisible clickable links on desktop; separately accessible real buttons are provided on mobile.
+- Original product catalogue, individual prices, category filtering (without All button), Wellness Insights full-image fix, and animations are retained.
 
-## Animations
-- Hero text and photograph entrance
-- Scroll-triggered section reveals
-- Staggered product card entrance and hover lift
-- Gentle image zoom on hover
-- Animated navigation underline and button feedback
-- Respect for `prefers-reduced-motion`
+## Notes
+- Banner is a rendered marketing design (not a real photograph of the Thika Road centre). Verify model/product representation before using it as factual advertising.
+- Image is 1882 × 836, close to Full HD width. Do not stretch it beyond its intrinsic dimensions if pixel-perfect detail is required.
+- Contact form and booking actions require a real backend or official business contact number for actual submissions; on the current static site these remain demo front-end behaviour.
 
-No external animation library or external image dependency.
-
-Note: Product prices previously marked as needing confirmation remain unchanged. Contact enquiry submission is not connected to a backend or WhatsApp number.
+After deploying, visit the **published website**, not your GitHub code page, and press **Ctrl + Shift + R**.
