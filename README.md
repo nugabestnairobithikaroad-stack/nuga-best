@@ -1,18 +1,24 @@
-# Nuga Best Thika Road — Complete VIP Website
+NUGA BEST THIKA ROAD — COMPLETE VIP WEBSITE
 
-This is the **complete working website**, not an image mockup.
+This is a complete static website for GitHub Pages with HTML, CSS, JS and bundled local image assets.
 
-## Files
-- `index.html` — site content, accessible links and page sections
-- `styles.css` — premium navy, charcoal and gold design; responsive screens and animations
-- `script.js` — product catalogue, category filtering, search, mobile menu and enquiry drafting
-- `assets/` — user-supplied real equipment and promotional photographs, plus logo
+DEPLOY
+1. Extract this ZIP.
+2. Upload index.html, styles.css, script.js, and assets/ directly to the root of the GitHub repository used for GitHub Pages (not the surrounding ZIP folder).
+3. Wait for the GitHub Actions / Pages deployment to complete.
+4. Visit the LIVE website and press Ctrl+Shift+R to refresh.
 
-## GitHub Pages
-Extract the ZIP and upload **the contents of this folder** (`index.html`, `styles.css`, `script.js`, `assets`) into the root of the GitHub Pages repository. Do not upload only the ZIP. In Settings → Pages, publish from the main branch/root if needed.
+WHAT CHANGED
+- The previous headline/white-background N5 hero has been replaced by the selected full-width luxury navy/gold hero banner.
+- The banner has a native 1882x836 source image and an approximately 1920px-wide export.
+- Both visual areas from the homepage comparison are addressed: old hero text-and-bed image is gone and new banner is used in its place.
+- Original model photographs provided by the user are correctly matched to all equipment, including T20/NM2500 and T9/NM-90 which were swapped in prior versions.
+- Product prices appear once per card. NM2500 and NM-70 remain unpriced pending confirmation. E5 price displayed provisionally as KES 137,800.
+- Original informational posters are displayed without cropping.
+- Category filters (without an All button), product search and responsive design are retained.
 
-## Important
-- No AI-generated equipment thumbnails were used. The original uploaded images vary in resolution. CSS preserves their proportions but cannot manufacture lost detail.
-- Product prices appear once per card. Unprovided prices are marked `Confirm price`. The E5 price remains provisionally KES 137,800.
-- The enquiry form prepares a message for copying. It **does not send messages automatically** and does not invent a WhatsApp telephone number. Add a confirmed business number and messaging integration before claiming real-time booking functionality.
-- Any references to comfort and relaxation are not claims of medical cure.
+LIMITATIONS
+- A few supplied originals, especially E5 and NM80, are small. Mild resampling and web optimisation cannot invent photographic detail. Their original appearance is preserved without AI product substitutions.
+- The graphic banner is an AI-generated promotional illustration, not an actual photograph of the business premises.
+- The booking / product enquiry form prepares text for copying; no email or WhatsApp transport is connected.
+- The visually printed CTA buttons in the banner have aligned clickable regions on desktop, and real buttons directly below the image on mobile.

@@ -12,3 +12,22 @@
 @media(max-width:980px){.nav-toggle{display:flex;order:3}.nav-cta{margin-left:auto}.nav-links{display:none;position:absolute;top:83px;left:0;right:0;background:#0b1d2a;padding:23px 24px;border-bottom:1px solid var(--gold-border);flex-direction:column;gap:20px;align-items:flex-start}.nav-links.open{display:flex}.hero-layout,.experience-layout,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-text{max-width:750px}.hero-showcase{max-width:650px;width:100%;margin:auto}.featured-grid,.product-grid,.insights-grid{grid-template-columns:repeat(2,1fr)}.equipment-strip{grid-template-columns:repeat(2,1fr)}.experience-layout{gap:45px}}
 @media(max-width:650px){.shell{width:calc(100% - 32px)}.topline-inner{font-size:9px}.topline-inner span:last-child{display:none}.navrow{gap:10px;min-height:75px}.nav-links{top:75px}.brand img{width:42px;height:42px}.brand strong{font-size:15px}.brand small{font-size:8px}.nav-cta{display:none}.hero{padding:44px 0 53px}.hero h1{font-size:clamp(2.65rem,11vw,4.3rem)}.hero-lead{font-size:15px}.hero-statline{margin-top:35px;gap:20px}.hero-photo-frame{min-height:275px}.hero-photo-frame img{padding:12px}.hero-photo-label{right:0;bottom:0}.trust-grid{grid-template-columns:repeat(2,1fr)}.trust-grid>div{font-size:10px;padding:15px 10px}.trust-grid>div:nth-child(2){border-right:0}.section{padding:65px 0}.section-heading{display:block}.section-heading h2{font-size:clamp(2.3rem,8vw,3.3rem)}.section-heading .text-link{display:inline-block;margin-top:18px}.featured-grid,.product-grid,.insights-grid,.equipment-strip{grid-template-columns:1fr}.featured-photo,.product-photo{height:260px}.poster{height:auto;min-height:250px}.poster img{height:auto;max-height:440px}.contact-grid{gap:33px}.form-card{padding:20px}.footer-layout,.footer-bottom{display:block}.footer nav{margin-top:20px}.footer-bottom span{display:block;margin-top:5px}.catalogue-bar{display:block}.searchbox{margin-top:18px;width:100%}.filters{gap:8px}.filter{padding:8px 12px}.experience-visual{padding:15px}.experience-caption{right:0}.btn{font-size:13px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js-motion .reveal{opacity:1!important;transform:none!important}}
+
+/* VIP hero: the user-selected navy/gold image replaces BOTH earlier conflicting hero visuals. */
+.visually-hidden{position:absolute!important;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden;white-space:nowrap}
+.vip-hero{padding:35px 0 30px;background:radial-gradient(circle at 70% 0%,rgba(205,165,89,.12),transparent 46%),linear-gradient(150deg,#07131f,#112b3c)}
+.vip-shell{width:min(1510px,calc(100% - 40px))}
+.vip-artwork{position:relative;isolation:isolate;background:#061826;border-radius:24px;overflow:hidden;border:1px solid rgba(221,182,102,.55);box-shadow:0 24px 65px rgba(0,0,0,.28)}
+.vip-artwork>img{display:block;width:100%;height:auto;object-fit:contain;aspect-ratio:1920 / 853}
+.vip-hotspot{position:absolute;z-index:4;display:block;border-radius:9px}
+.vip-hotspot:focus-visible{outline:3px solid #fff;outline-offset:-3px;box-shadow:0 0 0 6px #f2cb7d}
+.vip-book{left:4.1%;top:80.5%;width:17%;height:9.5%}
+.vip-shop{left:21.7%;top:80.5%;width:16.2%;height:9.5%}
+.vip-mobile-actions{display:none;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:17px}
+/* Original images use contain; never crop logos, equipment or text. */
+.featured-photo img,.product-photo img,.mini-product img,.experience-frame img,.poster img{object-fit:contain!important}
+.featured-photo,.product-photo{background:#ece7df}
+.featured-photo img,.product-photo img{max-width:100%;max-height:100%}
+.poster{height:auto;min-height:310px;padding:12px}
+.poster img{width:100%;height:auto;max-height:470px;object-fit:contain!important}
+@media(max-width:740px){.vip-hero{padding:15px 0 20px}.vip-shell{width:calc(100% - 20px)}.vip-artwork{border-radius:12px}.vip-hotspot{display:none}.vip-mobile-actions{display:flex}.vip-mobile-actions a{flex:1;min-width:130px;text-align:center}.poster img{max-height:none}}
