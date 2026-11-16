@@ -32,3 +32,6 @@ NAVIGATION UPDATE (2026-11-16)
 - No more scrolling down the homepage to reach a different section.
 - Browser Back and Forward work with #home, #shop, etc.
 - Existing single-price cards, category filters, genuine product photos, VIP banner and responsive menu retained.
+
+BELT PHOTO UPDATE
+The T9 Multi Functional Thermal Belt product card now displays the newly uploaded brown belt photo. The NM-90 Waist Belt listing is unchanged. The supplied photograph is 500 x 400 pixels, so the site uses contain-fit instead of stretching or artificially claiming native HD.
