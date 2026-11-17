@@ -105,3 +105,20 @@ nav.nav-links a.active{color:var(--gold-bright)}
 
 /* Two remaining editorial insights for the remaining editorial content. */
 @media(min-width:981px){.insights-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1030px;margin-left:auto;margin-right:auto}}
+
+/* Business enquiries: responsive booking controls and honest submission flow */
+.form-heading h3{font:700 28px/1.25 Georgia,serif;color:var(--gold-bright);margin:10px 0}
+.form-heading p{color:var(--muted);font-size:13px}
+.booking-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.booking-fields[hidden]{display:none!important}
+.enquiry-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.enquiry-buttons .btn{flex:1;min-width:170px;text-align:center}
+#whatsappSend[hidden]{display:none!important}
+/* High-fidelity product image display without cropping */
+.featured-photo img,.product-photo img,.mini-product img,.poster img{object-fit:contain!important;object-position:center!important}
+.product-photo,.featured-photo{background:#f0ebe4}
+.product-photo img,.featured-photo img{max-height:100%;max-width:100%}
+.poster img{height:auto;max-height:510px}
+.nav-links{scroll-behavior:smooth}
+.nav-links a{flex-shrink:0}
+@media(max-width:650px){.booking-fields{grid-template-columns:1fr}.enquiry-buttons{display:grid;grid-template-columns:1fr}}
