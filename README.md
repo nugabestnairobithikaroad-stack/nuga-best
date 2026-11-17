@@ -1,30 +1,44 @@
-# Nuga Best Thika Road — Complete Website
+# Nuga Best Thika Road — Google Search SEO-ready website
 
-This is the complete static website. Pages/views: Home, Therapy Services, Shop Products, Wellness Insights, About Us, Contact. The navigation switches views without scrolling down the whole homepage.
+This package contains **six real, crawlable HTML pages** rather than JavaScript-only `#` views. It retains the VIP navy/gold design, 11 products, real supplied photographs, enquiry form and booking request preparation. NM-70 is excluded.
 
-## Publish with GitHub Pages
+## Pages
+- `index.html` — Nuga Best Thika Road, Nairobi
+- `therapy-services.html` — thermal wellness sessions, Nairobi
+- `shop-products.html` — Nuga Best products and prices in Kenya
+- `wellness-insights.html` — wellness educational content
+- `about-us.html` — local business information
+- `contact.html` — contact and booking enquiry
 
-1. Extract this ZIP. Open the `NugaBest_ThikaRoad_Complete_Business_Website` folder.
-2. Upload **everything INSIDE** that folder to the **root** of your GitHub repository: `index.html`, `styles.css`, `script.js`, `settings.js`, `robots.txt`, `assets/`.
-3. In GitHub: Settings > Pages > Deploy from branch > main > /(root), or use your existing Pages build workflow.
-4. Check Actions / Pages for successful deployment; open the live site and hard refresh with Ctrl + Shift + R.
+Each page has its own SEO title, description, on-page H1, LocalBusiness JSON-LD and social preview metadata. The product catalogue is present in the HTML for search crawlers even before JavaScript runs. Product category search/filter still work in the browser.
 
-## Configure WhatsApp
+## IMPORTANT: Set your REAL public website URL before deployment
+A correct sitemap and canonical links require the **exact** final domain, including a GitHub project subpath if applicable. We have deliberately **not invented** a website address. For example, if your actual public URL were `https://username.github.io/my-nuga-website/`, run:
 
-Edit `settings.js` and enter the official Nuga Best WhatsApp Business phone number in digits in international format, e.g. **2547XXXXXXXX is an example FORMAT, not a real number**. Don't add + or spaces. The site will then provide a WhatsApp button after a visitor prepares an enquiry. Until configured, the form safely prepares text for copying. It does **not** submit anything to a server.
+```bash
+python generate_seo_urls.py https://username.github.io/my-nuga-website/
+```
 
-## Booking
+**The example is not your actual domain.** Replace it with the real URL. Running the script creates `sitemap.xml`, updates `robots.txt`, and adds canonical/OG absolute URLs to every HTML page. After this step, upload all the generated files to the same public site. Do not use a guessed or incorrect URL.
 
-A visitor can choose a future date and a preferred Morning/Afternoon/Any time window, then prepare a booking request. **It is not an automatic confirmed reservation.** The business must respond and confirm it. A fully automated live appointment calendar needs a booking platform/backend and real availability data.
+If you use Windows and Python is not installed, supply the exact live site URL in ChatGPT so the files can be preconfigured with that address instead.
 
-## Product prices and photos
+## Deploy on GitHub Pages
+1. Extract the archive, open the `NugaBest_ThikaRoad_SEO_Ready` folder.
+2. Upload **the contents** (the HTML files, `styles.css`, `script.js`, `settings.js`, images, `robots.txt`, and sitemap if generated) to the root of the repository that GitHub Pages publishes.
+3. Verify the homepage and each HTML page loads at its own public URL.
+4. In [Google Search Console](https://search.google.com/search-console/about), verify ownership of the **actual live site**. Submit its sitemap URL (after running generator). Use URL Inspection to request indexing for the homepage and major pages.
+5. Claim and verify the business at [Google Business Profile](https://www.google.com/business/). Use consistent business name, address, real phone, hours and official website URL. Consider uploading real facility photos and customer reviews with permission.
 
-All eleven retained products appear once per card with original user-supplied reference images. NM-70 has been removed from product listings and Wellness Insights. The NM2500 price still requires confirmation; E5 is provisionally KES 137,800 because two earlier supplied lists disagree. Some source photos are low resolution; image scaling cannot recover missing detail.
+Google indexing and ranking **are not guaranteed** and may take time. Sitemap submission aids discovery but does not guarantee visibility.
 
-## SEO and image assets
+## Data accuracy and completion
+- Official WhatsApp Business number is still missing. Set it in `settings.js` (digits only, 254...); no made-up number was included.
+- Confirm centre hours and business contact phone before adding those facts to the site or business profile.
+- NM2500 price remains unconfirmed; E5 Foot Massager price is provisional, as earlier price lists disagreed. Prices only appear once per card.
+- Avoid implying medical treatments or guaranteed health outcomes from heating/massage equipment.
+- Real user-supplied product photos were preserved. Low native-resolution photos cannot be made genuinely HD by HTML/CSS.
 
-The website contains page titles, descriptions, social-preview metadata and robots.txt. To be discoverable in Google, publish the site on its final domain and submit that domain to Google Search Console. The default Open Graph image uses a relative path; replace with an absolute URL when you have a final website domain.
-
-## Privacy
-
-No booking or enquiry details are stored by this website. The prepared message is shared only if the visitor chooses WhatsApp or copies it. Do not put API secrets in public site files.
+## Testing
+- Open index.html, therapy-services.html, shop-products.html, wellness-insights.html, about-us.html, and contact.html locally. Navigation should load a separate page, not scroll.
+- Test shop filters and product enquiry links. Contact form prepares a message, but does **not** send it to a server. Booking requests require manual confirmation.

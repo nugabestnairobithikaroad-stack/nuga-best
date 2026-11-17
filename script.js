@@ -18,18 +18,13 @@ const businessNumber = String(settings.whatsappNumber || '').replace(/\D/g,'');
 const whatsappReady = /^\d{10,15}$/.test(businessNumber);
 const escapeText = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const $ = id => document.getElementById(id);
-const pageTitles = {home:'Home',therapy:'Therapy Services',shop:'Shop Products',insights:'Wellness Insights',about:'About Us',contact:'Contact'};
-const knownPages = new Set(Object.keys(pageTitles));
-const nav = $('siteNav');
-const sections = [...document.querySelectorAll('main > [data-page]')];
-const navigationLinks = [...nav.querySelectorAll('a')];
 let activeCategory = null;
 
 function productHTML(p, featured=false){
   const card = featured ? 'featured-card' : 'product-card';
   const photo = featured ? 'featured-photo' : 'product-photo';
   const body = featured ? 'featured-body' : 'product-copy';
-  return `<article class="${card} reveal is-visible"><div class="${photo}"><img src="${p.image}" alt="${escapeText(p.name)}" loading="lazy" decoding="async"></div><div class="${body}"><span class="card-cat">${escapeText(p.category)}</span><h3>${escapeText(p.name)}</h3><p>${escapeText(p.desc)}</p><div class="${featured?'price-row':'product-meta'}"><span class="price">${escapeText(p.price)}</span><a class="enquire-link" href="#contact" data-product="${escapeText(p.name)}">Enquire ↗</a></div></div></article>`;
+  return `<article class="${card} reveal is-visible"><div class="${photo}"><img src="${p.image}" alt="${escapeText(p.name)}" loading="lazy" decoding="async"></div><div class="${body}"><span class="card-cat">${escapeText(p.category)}</span><h3>${escapeText(p.name)}</h3><p>${escapeText(p.desc)}</p><div class="${featured?'price-row':'product-meta'}"><span class="price">${escapeText(p.price)}</span><a class="enquire-link" href="contact.html?product=${encodeURIComponent(p.name)}" data-product="${escapeText(p.name)}">Enquire ↗</a></div></div></article>`;
 }
 const featured = $('featuredProducts');
 if (featured) featured.innerHTML=[products[0],products[2],products[7]].map(p=>productHTML(p,true)).join('');
@@ -52,16 +47,6 @@ filters.forEach(button=>button.addEventListener('click',()=>{
 }));
 search?.addEventListener('input',renderProducts);
 
-function showPage(page, push=false){
- const key=knownPages.has(page)?page:'home';
- sections.forEach(s=>s.hidden=s.dataset.page!==key);
- navigationLinks.forEach(a=>{const selected=a.getAttribute('href')==='#'+key;a.classList.toggle('active',selected);if(selected)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
- if(push && location.hash!=='#'+key)history.pushState({page:key},'', '#'+key);
- document.title=`Nuga Best Thika Road | ${pageTitles[key]}`;
- sections.filter(s=>!s.hidden).forEach(s=>s.querySelectorAll('.reveal').forEach(e=>e.classList.add('is-visible')));
- window.scrollTo(0,0);
-}
-
 function chooseProduct(product){
  $('interest').value='Product information and price';
  $('contactForm').elements.message.value=`I would like to enquire about ${product}. Please confirm its current price and availability.`;
@@ -73,30 +58,22 @@ function setBookingVisibility(){
  $('bookingFields').hidden=!isBooking;
  $('bookingDate').required=isBooking;
 }
-$('interest').addEventListener('change',setBookingVisibility);
-setBookingVisibility();
+if ($('interest')) { $('interest').addEventListener('change',setBookingVisibility); setBookingVisibility(); }
 // Date is set in the visitor's local time rather than UTC to avoid a wrong day.
 const now=new Date();
 const localToday=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
-$('bookingDate').min=localToday;
+if ($('bookingDate')) $('bookingDate').min=localToday;
 
-document.addEventListener('click', e=>{
- const a=e.target.closest('a[href^="#"]');
- if(!a) return;
- const page=a.getAttribute('href').slice(1);
- if(!knownPages.has(page))return;
- e.preventDefault();
- if(a.hasAttribute('data-product'))chooseProduct(a.dataset.product);
- // Default to booking when using Book a Session buttons.
- else if(a.textContent.trim().toLowerCase().includes('book a session')||a.getAttribute('aria-label')==='Book a session'){
-   $('interest').value='Booking a 45-minute session';setBookingVisibility();$('messageOutput').hidden=true;
- }
- showPage(page,true);
-});
-window.addEventListener('popstate',()=>showPage(location.hash.slice(1)));
-window.addEventListener('hashchange',()=>showPage(location.hash.slice(1)));
-showPage(location.hash.slice(1));
+// On separate HTML pages normal links work without view-switching JavaScript.
+// Product cards navigate to contact.html?product=... with a prepared enquiry.
+if ($('interest')) {
+ const productQuery=new URLSearchParams(location.search).get('product');
+ if(productQuery) chooseProduct(productQuery);
+ const kind=new URLSearchParams(location.search).get('intent');
+ if(kind==='booking') { $('interest').value='Booking a 45-minute session'; setBookingVisibility(); }
+}
 
+if ($('contactForm')) {
 $('contactForm').addEventListener('submit',event=>{
  event.preventDefault();
  const form=event.currentTarget;
@@ -127,6 +104,8 @@ $('copyMessage').addEventListener('click',async()=>{
  try{await navigator.clipboard.writeText(box.value);$('copyStatus').textContent='Copied. Paste into WhatsApp or a message to the centre.';}
  catch{box.focus();box.select();$('copyStatus').textContent='Press Ctrl + C to copy the selected message.';}
 });
+
+}
 $('year').textContent=String(new Date().getFullYear());
 if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');observer.unobserve(e.target)}}),{threshold:.05});
