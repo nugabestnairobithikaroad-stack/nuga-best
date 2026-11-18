@@ -96,3 +96,46 @@ $('contactForm')?.addEventListener('submit',event=>{
 $('copyMessage')?.addEventListener('click',async()=>{const box=$('messageText');if(!box)return;try{await navigator.clipboard.writeText(box.value);$('copyStatus').textContent='Message copied. Paste it into WhatsApp and send it to the centre.';}catch{box.focus();box.select();$('copyStatus').textContent='Press Ctrl + C to copy the selected message.';}});
 if($('year'))$('year').textContent=String(new Date().getFullYear());
 if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target)}}),{threshold:.05});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));}
+
+
+// Responsive auto sliders for Shop and Contact pages.
+(function(){
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-slider]').forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll('.page-slide'));
+    const dotsWrap = slider.querySelector('.page-slider-dots');
+    if (!slides.length || !dotsWrap) return;
+    let index = Math.max(0, slides.findIndex(s => s.classList.contains('is-active')));
+    const dots = slides.map((_, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      btn.addEventListener('click', () => { index = i; show(index, true); restart(); });
+      dotsWrap.appendChild(btn);
+      return btn;
+    });
+    function show(i, userAction){
+      slides.forEach((slide, n) => {
+        const active = n === i;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+        if (active && userAction && slide.querySelector('a,button')) {
+          // keep focus untouched for accessibility; do not auto-focus
+        }
+      });
+      dots.forEach((dot, n) => dot.classList.toggle('is-active', n === i));
+    }
+    show(index, false);
+    if (reduceMotion || slides.length < 2) return;
+    let timer = null;
+    function next(){ index = (index + 1) % slides.length; show(index, false); }
+    function start(){ timer = window.setInterval(next, 5200); }
+    function stop(){ if (timer) { window.clearInterval(timer); timer = null; } }
+    function restart(){ stop(); start(); }
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    slider.addEventListener('focusin', stop);
+    slider.addEventListener('focusout', start);
+    start();
+  });
+})();

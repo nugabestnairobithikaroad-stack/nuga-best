@@ -8,7 +8,7 @@ Upload **all contents of this folder** to the GitHub Pages publishing folder, ke
 
 ## Contact details
 - WhatsApp: +254 748 744 688
-- Email: nugabestnairobithikaroad@gmail.com
+- Email: nugathikaroad@gmail.com
 - Location (from supplied map screenshot): Thika Road, opposite Garden City Mall, after Total Petrol Station, Nairobi, Kenya
 - Directions link: Google Maps search near Garden City Mall, not a verified exact rooftop pin
 
@@ -36,3 +36,6 @@ HOMEPAGE BANNER REPLACEMENT (18 Nov 2026)
 - On mobile the same overlays remain clickable, with additional accessible text buttons below the artwork.
 - WhatsApp configured: +254 748 744 688.
 - To publish on GitHub Pages, upload the *contents* of this folder to repository root, not the parent folder.
+
+
+Latest update: added responsive auto-sliders to the Contact and Shop pages, improved animated buttons, changed email to nugathikaroad@gmail.com, and expanded the Google Maps location section.
