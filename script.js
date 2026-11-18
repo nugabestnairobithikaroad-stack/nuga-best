@@ -139,3 +139,21 @@ if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion
     start();
   });
 })();
+
+
+/* Accessible mobile navigation: Android, iOS, tablets */
+(()=>{
+ const toggle=document.getElementById('mobileMenuToggle');
+ const nav=document.getElementById('siteNav');
+ if(!toggle||!nav)return;
+ const setOpen=(open)=>{
+   nav.classList.toggle('mobile-open',open);
+   toggle.setAttribute('aria-expanded',String(open));
+   toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
+ };
+ toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')setOpen(false)});
+ document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!toggle.contains(e.target))setOpen(false)});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+ window.addEventListener('resize',()=>{if(window.innerWidth>900)setOpen(false)});
+})();

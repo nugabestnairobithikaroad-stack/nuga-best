@@ -284,3 +284,76 @@ nav.nav-links a.active{color:var(--gold-bright)}
 @media(max-width:360px){
  .below-banner-actions .below-banner-btn{font-size:18px;gap:9px;padding:12px 9px}
 }
+
+
+/* All-device responsive layout patch — preserves desktop VIP design. */
+.mobile-menu-toggle{display:none}
+@media(max-width:900px){
+  .header .navrow{display:flex!important;align-items:center!important;justify-content:space-between!important;flex-wrap:nowrap!important;min-height:74px;gap:12px}
+  .header .brand{min-width:0;flex:0 1 auto}
+  .header .brand span{min-width:0}
+  .header .brand strong{font-size:clamp(14px,3.5vw,18px)}
+  .header .brand small{font-size:clamp(7px,1.9vw,10px)}
+  .header .nav-toggle{display:none!important}
+  .mobile-menu-toggle{display:flex!important;flex:0 0 auto;position:relative;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:55px;height:51px;border:1px solid var(--gold-border);border-radius:12px;background:#112a3b;color:var(--gold-bright);margin-left:auto;z-index:72;cursor:pointer}
+  .mobile-menu-toggle>span:not(.menu-label){height:2px;width:23px;background:#f2d48f;border-radius:2px}
+  .mobile-menu-toggle .menu-label{font:700 9px/1 Arial,sans-serif;letter-spacing:.07em}
+  .header .nav-links{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;max-width:none!important;width:100%!important;max-height:calc(100dvh - 90px);overflow-y:auto!important;overflow-x:hidden!important;z-index:71;flex-direction:column!important;grid-template-columns:1fr!important;align-items:stretch!important;justify-content:start!important;gap:6px!important;padding:16px max(16px,calc((100% - 700px)/2)) 20px!important;background:#071a28!important;border:1px solid var(--gold-border)!important;border-radius:0 0 16px 16px!important;box-shadow:0 20px 35px #020a12b8!important;white-space:normal!important}
+  .header .nav-links.mobile-open{display:flex!important}
+  .header .nav-links a{display:flex!important;justify-content:flex-start!important;min-height:47px!important;width:100%!important;flex-shrink:0!important;padding:12px 15px!important;font-size:15px!important;white-space:normal!important}
+  .header .nav-cta{display:none!important}
+  .shell{width:calc(100% - 32px)!important;max-width:100%}
+  .vip-shell{width:calc(100% - 20px)!important}
+  .below-banner-actions{grid-template-columns:1fr!important;max-width:540px!important;margin:18px auto 0!important;gap:12px!important;padding:0 4px!important}
+  .below-banner-btn{width:100%!important;min-height:65px!important;white-space:normal!important;font-size:clamp(18px,4.8vw,23px)!important;gap:12px!important;overflow-wrap:break-word}
+  .featured-grid,.product-grid,.insights-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .contact-grid,.location-layout,.about-grid,.experience-layout{grid-template-columns:minmax(0,1fr)!important;gap:24px!important}
+  .contact-details,.form-card,.contact-chip,.full-location,.location-reference{min-width:0}
+  .page-slide-overlay{max-width:95%!important}
+  .footer-layout{flex-wrap:wrap}
+}
+@media(max-width:600px){
+  .topline-inner{letter-spacing:.06em}
+  .brand img{width:40px!important;height:40px!important}
+  .header .brand strong{font-size:14px!important}
+  .header .brand small{font-size:8px!important;letter-spacing:.04em!important}
+  .vip-artwork{border-radius:12px!important}
+  .vip-artwork>img{width:100%!important;height:auto!important;object-fit:contain!important;display:block!important}
+  .featured-grid,.product-grid,.insights-grid,.equipment-strip{grid-template-columns:minmax(0,1fr)!important}
+  .featured-card,.product-card,.insight-card{min-width:0}
+  .featured-photo,.product-photo{height:250px!important}
+  .featured-photo img,.product-photo img{max-width:100%!important;object-fit:contain!important}
+  .section{padding:46px 0!important}
+  .section-heading h2{font-size:clamp(29px,8vw,39px)!important;line-height:1.12}
+  .page-slider-track{height:410px!important}
+  .page-slide img{height:245px!important;max-height:245px!important;width:100%!important;object-fit:contain!important;object-position:center center!important;padding:10px!important}
+  .page-slide-overlay{left:12px!important;right:12px!important;bottom:12px!important;width:auto!important;max-width:none!important;padding:12px!important}
+  .page-slide-overlay h2{font-size:clamp(18px,5vw,23px)!important;line-height:1.12!important}
+  .page-slide-actions{gap:8px!important}
+  .page-slide-actions .btn{font-size:12px!important;min-height:42px!important;padding:9px 10px!important;white-space:normal!important;text-align:center}
+  .page-slider-dots{top:9px!important;right:12px!important}
+  .catalogue-bar{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:12px!important}
+  .filters{display:flex!important;gap:8px!important;flex-wrap:wrap!important}
+  .filter{min-height:44px!important;font-size:13px!important}
+  .searchbox{width:100%!important;max-width:none!important;margin-top:0!important}
+  .contact-fast-grid{grid-template-columns:minmax(0,1fr)!important}
+  .contact-fast a,.contact-chip{width:100%!important;max-width:100%;overflow-wrap:anywhere!important}
+  .contact-chip strong{font-size:clamp(12px,3.8vw,16px)}
+  .form-card{padding:18px!important}
+  .location-top{display:flex!important;flex-direction:column!important;align-items:flex-start!important}
+  .map-frame{height:330px!important;min-width:0}
+  .cart-item{display:flex;flex-wrap:wrap;gap:8px}
+  .product-meta,.price-row{align-items:flex-start!important;flex-wrap:wrap!important;gap:12px}
+  .buy-actions{justify-content:flex-start!important;max-width:100%}
+  .footer-contact a{max-width:100%;overflow-wrap:anywhere}
+  .footer-layout,.footer-bottom{display:block!important}
+  .footer nav{margin-top:24px}
+}
+@media(max-width:360px){
+ .shell{width:calc(100% - 24px)!important}
+ .vip-shell{width:calc(100% - 14px)!important}
+ .below-banner-btn{font-size:18px!important;min-height:62px!important;gap:7px!important}
+ .page-slide-actions .btn{font-size:11px!important}
+}
+@media(hover:none){.btn:hover,.below-banner-btn:hover,.enquire-link:hover{transform:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
