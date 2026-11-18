@@ -39,3 +39,6 @@ HOMEPAGE BANNER REPLACEMENT (18 Nov 2026)
 
 
 Latest update: added responsive auto-sliders to the Contact and Shop pages, improved animated buttons, changed email to nugathikaroad@gmail.com, and expanded the Google Maps location section.
+
+
+Final slider/map correction: full-width embedded Google map of the Garden City Mall area (NOT a confirmed pin for Nuga Best); removed squeezed screenshot, deleted unwanted third contact slider slide, simplified captions, and switched sliders to supplied equipment photos.
