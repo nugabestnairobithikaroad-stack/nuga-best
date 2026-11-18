@@ -1,8 +1,9 @@
-// NUGA BEST THIKA ROAD SETTINGS
-// Enter the official WhatsApp Business number in international digits, WITHOUT + or spaces.
-// Example FORMAT only: 2547XXXXXXXX (do not copy the Xs).
-// Until configured, enquiry messages can be copied but are NOT sent.
-window.NUGA_BEST_SETTINGS = {
-  whatsappNumber: "",
+// NUGA BEST THIKA ROAD — PUBLIC WEBSITE SETTINGS
+// Official Nuga Best Thika Road WhatsApp Business number is configured below.
+// Use international digits only, without +, spaces or leading zero.
+// Example format: 2547XXXXXXXX (placeholder, not a real number).
+// Never add passwords, Paystack credentials or private keys to this file.
+window.NUGA_BEST_SETTINGS = Object.freeze({
+  whatsappNumber: "254748744688",
   businessName: "Nuga Best Thika Road"
-};
+});

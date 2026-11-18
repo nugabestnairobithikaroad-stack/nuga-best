@@ -126,3 +126,17 @@ nav.nav-links a.active{color:var(--gold-bright)}
 /* Crawlable individual pages share the VIP visual design. */
 .seo-page-title{font:700 clamp(1.6rem,3vw,2.8rem)/1.1 Georgia,serif;color:var(--gold-bright);margin:0;padding:24px max(24px,calc((100% - 1180px)/2)) 0;background:var(--navy,#0b1b27)}
 .seo-content{padding-top:22px;padding-bottom:60px;background:#0b1b28}.seo-content h2{font:700 28px Georgia,serif;color:var(--gold-bright)}.seo-content p{color:var(--muted);max-width:780px}
+
+.product-meta,.price-row{flex-wrap:wrap}.payment-note{padding:12px 0 40px;color:#d5c9b7}
+
+/* WhatsApp shopping — premium navy and gold theme */
+.buy-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:9px}
+.add-to-cart{color:var(--gold-bright);border:1px solid var(--gold-border);background:transparent;border-radius:8px;padding:9px 12px;font-size:12px;font-weight:750;cursor:pointer}
+.add-to-cart:hover{background:rgba(227,182,107,.14)}
+.cart-action-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:18px 0 23px;padding:15px 18px;border:1px solid var(--gold-border);border-radius:15px;background:#142b39}
+.cart-action-bar p{margin:0;color:#e1ddcf;font-size:13px}.cart-open{white-space:nowrap}
+.cart-panel{background:#0d2331;border:1px solid var(--gold-border);border-radius:16px;box-shadow:0 18px 45px #030e16a8;padding:22px;margin:0 0 24px}
+.cart-panel[hidden]{display:none!important}.cart-header{display:flex;justify-content:space-between;align-items:center}.cart-header h2{font:26px Georgia,serif;margin:0;color:#fff}.cart-close{background:transparent;color:var(--gold);font-size:29px;border:0;cursor:pointer}.cart-caption{color:#c5cbd0;font-size:12px;margin:8px 0 17px}
+.cart-item{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}.cart-item strong{display:block;font-size:14px}.cart-item small{display:block;color:var(--muted);margin-top:4px}.cart-qty{display:flex;align-items:center;gap:12px;white-space:nowrap}.cart-qty button{width:32px;height:32px;background:#1b3b4a;color:var(--gold);border:1px solid var(--gold-border);border-radius:8px;cursor:pointer}.cart-total{font-weight:800;color:var(--gold-bright);padding:17px 0}.cart-actions{display:flex;gap:12px;flex-wrap:wrap}.cart-actions .btn{font-size:13px}.cart-actions .is-disabled{opacity:.45;pointer-events:none}.manual-payment-note{padding:15px 17px;border-left:3px solid var(--gold);background:rgba(231,183,107,.08);color:#e8e1d6;font-size:13px;border-radius:9px;margin-top:20px}
+.enquire-link{white-space:nowrap}.product-meta{align-items:center}.cart-open:focus-visible,.add-to-cart:focus-visible,.cart-qty button:focus-visible{outline:3px solid var(--gold-bright);outline-offset:2px}
+@media(max-width:680px){.cart-action-bar{align-items:stretch;flex-direction:column}.cart-action-bar .btn{width:100%}.cart-panel{padding:16px}.cart-item{align-items:flex-start}.product-meta{align-items:flex-start}.buy-actions{justify-content:flex-start}}

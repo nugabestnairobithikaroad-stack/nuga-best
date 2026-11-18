@@ -1,44 +1,38 @@
-# Nuga Best Thika Road — Google Search SEO-ready website
+# Nuga Best Thika Road — WhatsApp Shopping Edition
 
-This package contains **six real, crawlable HTML pages** rather than JavaScript-only `#` views. It retains the VIP navy/gold design, 11 products, real supplied photographs, enquiry form and booking request preparation. NM-70 is excluded.
+This is the complete static Nuga Best VIP navy/gold website, with **six separate SEO-friendly pages** and real product photos provided for the project. Product ordering and appointment requests use **WhatsApp instead of Paystack**.
 
-## Pages
-- `index.html` — Nuga Best Thika Road, Nairobi
-- `therapy-services.html` — thermal wellness sessions, Nairobi
-- `shop-products.html` — Nuga Best products and prices in Kenya
-- `wellness-insights.html` — wellness educational content
-- `about-us.html` — local business information
-- `contact.html` — contact and booking enquiry
+## REQUIRED BEFORE PUBLISHING: official WhatsApp number
 
-Each page has its own SEO title, description, on-page H1, LocalBusiness JSON-LD and social preview metadata. The product catalogue is present in the HTML for search crawlers even before JavaScript runs. Product category search/filter still work in the browser.
+Open `settings.js`. Set `whatsappNumber` to your official **Nuga Best Thika Road WhatsApp Business number**, in international digits only, starting with `254`. Example format `2547XXXXXXXX` (not a real number). There is deliberately **no fake phone number** in this package.
 
-## IMPORTANT: Set your REAL public website URL before deployment
-A correct sitemap and canonical links require the **exact** final domain, including a GitHub project subpath if applicable. We have deliberately **not invented** a website address. For example, if your actual public URL were `https://username.github.io/my-nuga-website/`, run:
+Until it is configured, product buttons direct customers to the contact form, which prepares a message they can copy. Cart checkout also prepares the order on the contact page. Once configured, direct product orders and the cart open WhatsApp with a prewritten message. Booking requests are prepared from Contact and can then be sent to WhatsApp.
 
-```bash
-python generate_seo_urls.py https://username.github.io/my-nuga-website/
-```
+## Features
 
-**The example is not your actual domain.** Replace it with the real URL. Running the script creates `sitemap.xml`, updates `robots.txt`, and adds canonical/OG absolute URLs to every HTML page. After this step, upload all the generated files to the same public site. Do not use a guessed or incorrect URL.
+- Home (`index.html`), Therapy Services, Shop Products, Wellness Insights, About Us, Contact — separate HTML pages
+- Premium navy/charcoal/gold theme, responsive layout and motion effects
+- 11 product listings with photographs, one indicative price per item (NM-70 removed)
+- Product search and category filters; no “All” category button
+- **Order on WhatsApp** link for each item
+- **Add to cart**, quantity adjustments and combined WhatsApp order message
+- Request preferred appointment date and time through Contact
+- No card payments, no Paystack checkout, no API keys and no automatic payment verification
+- All orders, prices, stock, delivery and payment instructions are confirmed manually by the business
+- Sitemap generator `generate_seo_urls.py` for use only with your real deployed domain
 
-If you use Windows and Python is not installed, supply the exact live site URL in ChatGPT so the files can be preconfigured with that address instead.
+## Deployment
 
-## Deploy on GitHub Pages
-1. Extract the archive, open the `NugaBest_ThikaRoad_SEO_Ready` folder.
-2. Upload **the contents** (the HTML files, `styles.css`, `script.js`, `settings.js`, images, `robots.txt`, and sitemap if generated) to the root of the repository that GitHub Pages publishes.
-3. Verify the homepage and each HTML page loads at its own public URL.
-4. In [Google Search Console](https://search.google.com/search-console/about), verify ownership of the **actual live site**. Submit its sitemap URL (after running generator). Use URL Inspection to request indexing for the homepage and major pages.
-5. Claim and verify the business at [Google Business Profile](https://www.google.com/business/). Use consistent business name, address, real phone, hours and official website URL. Consider uploading real facility photos and customer reviews with permission.
+1. Unzip this archive.
+2. Open `settings.js` and enter the *real* official WhatsApp Business number.
+3. Upload the **contents** of this folder to your GitHub Pages site or other static host, replacing the old files. Remove old `paystack-links.js` and other payment setup files from the repository if present.
+4. After deploying, test Home, Shop, Cart, WhatsApp links and Booking form on mobile and desktop.
+5. Refresh the published site with Ctrl+Shift+R. If you have a real site URL, run `python generate_seo_urls.py https://your-real-domain/` to generate the sitemap/canonical URLs, then redeploy.
 
-Google indexing and ranking **are not guaranteed** and may take time. Sitemap submission aids discovery but does not guarantee visibility.
+## Important limitations
 
-## Data accuracy and completion
-- Official WhatsApp Business number is still missing. Set it in `settings.js` (digits only, 254...); no made-up number was included.
-- Confirm centre hours and business contact phone before adding those facts to the site or business profile.
-- NM2500 price remains unconfirmed; E5 Foot Massager price is provisional, as earlier price lists disagreed. Prices only appear once per card.
-- Avoid implying medical treatments or guaranteed health outcomes from heating/massage equipment.
-- Real user-supplied product photos were preserved. Low native-resolution photos cannot be made genuinely HD by HTML/CSS.
+The site does not send messages or collect payments automatically. WhatsApp is a separate application; customers must click Send in WhatsApp and Nuga Best must confirm the order. The website cannot verify M-PESA transactions. The E5 Foot Massager listed price is provisional due to two conflicting earlier price lists; the NM2500 price is awaiting confirmation. Some supplied product images have low native resolution.
 
-## Testing
-- Open index.html, therapy-services.html, shop-products.html, wellness-insights.html, about-us.html, and contact.html locally. Navigation should load a separate page, not scroll.
-- Test shop filters and product enquiry links. Contact form prepares a message, but does **not** send it to a server. Booking requests require manual confirmation.
+
+## WhatsApp configured
+Official business WhatsApp: +254 748 744 688. The website uses 254748744688 in settings.js. Test the product order, cart and booking links before publishing.
