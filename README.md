@@ -1,38 +1,38 @@
-# Nuga Best Thika Road — WhatsApp Shopping Edition
+# Nuga Best Thika Road — Complete WhatsApp Website
 
-This is the complete static Nuga Best VIP navy/gold website, with **six separate SEO-friendly pages** and real product photos provided for the project. Product ordering and appointment requests use **WhatsApp instead of Paystack**.
+This is a static, six-page, GitHub Pages-ready website for Nuga Best Thika Road. It has a VIP navy-and-gold theme, a promotional homepage image, real supplied product catalogue images, WhatsApp ordering and manual appointment enquiries.
 
-## REQUIRED BEFORE PUBLISHING: official WhatsApp number
+## Publish
 
-Open `settings.js`. Set `whatsappNumber` to your official **Nuga Best Thika Road WhatsApp Business number**, in international digits only, starting with `254`. Example format `2547XXXXXXXX` (not a real number). There is deliberately **no fake phone number** in this package.
+Upload **all contents of this folder** to the GitHub Pages publishing folder, keeping `index.html` at the site root. Preserve `assets/`, `styles.css`, `script.js`, `settings.js`, and the other `.html` pages. The official WhatsApp number in `settings.js` is `254748744688`.
 
-Until it is configured, product buttons direct customers to the contact form, which prepares a message they can copy. Cart checkout also prepares the order on the contact page. Once configured, direct product orders and the cart open WhatsApp with a prewritten message. Booking requests are prepared from Contact and can then be sent to WhatsApp.
+## Contact details
+- WhatsApp: +254 748 744 688
+- Email: nugabestnairobithikaroad@gmail.com
+- Location (from supplied map screenshot): Thika Road, opposite Garden City Mall, after Total Petrol Station, Nairobi, Kenya
+- Directions link: Google Maps search near Garden City Mall, not a verified exact rooftop pin
 
-## Features
+## Search Console — essential after publishing
+The actual live website URL has not been supplied. Therefore the sitemap and canonical tags cannot yet be finalised accurately.
 
-- Home (`index.html`), Therapy Services, Shop Products, Wellness Insights, About Us, Contact — separate HTML pages
-- Premium navy/charcoal/gold theme, responsive layout and motion effects
-- 11 product listings with photographs, one indicative price per item (NM-70 removed)
-- Product search and category filters; no “All” category button
-- **Order on WhatsApp** link for each item
-- **Add to cart**, quantity adjustments and combined WhatsApp order message
-- Request preferred appointment date and time through Contact
-- No card payments, no Paystack checkout, no API keys and no automatic payment verification
-- All orders, prices, stock, delivery and payment instructions are confirmed manually by the business
-- Sitemap generator `generate_seo_urls.py` for use only with your real deployed domain
+1. Publish the site to GitHub Pages or your own domain.
+2. Run `python generate_seo_urls.py https://ACTUAL-PUBLIC-WEBSITE-URL/` locally with the **real** HTTPS base URL, including repository path if applicable (this script uses `beautifulsoup4`).
+3. Upload the resulting updated HTML, `sitemap.xml` and `robots.txt` files to your published site.
+4. Open https://search.google.com/search-console/ and add the correct site property, complete verification, submit the exact published `sitemap.xml` address, and request indexing for the homepage.
+5. Add the same website URL and business contact details to the official Google Business Profile.
 
-## Deployment
+Do not invent your domain, search-console verification record, business opening hours or exact coordinates.
 
-1. Unzip this archive.
-2. Open `settings.js` and enter the *real* official WhatsApp Business number.
-3. Upload the **contents** of this folder to your GitHub Pages site or other static host, replacing the old files. Remove old `paystack-links.js` and other payment setup files from the repository if present.
-4. After deploying, test Home, Shop, Cart, WhatsApp links and Booking form on mobile and desktop.
-5. Refresh the published site with Ctrl+Shift+R. If you have a real site URL, run `python generate_seo_urls.py https://your-real-domain/` to generate the sitemap/canonical URLs, then redeploy.
+## Notes on images
+The homepage banner is a **generated promotional image**, using the submitted N5 bed photograph as a visual reference; it is not a documentary photo of the centre or exact equipment. The N5 product card uses the supplied real bed photograph. Image generation cannot guarantee an exact product match; use an authentic photograph of a customer using the N5 if strict factual product fidelity is required.
 
-## Important limitations
-
-The site does not send messages or collect payments automatically. WhatsApp is a separate application; customers must click Send in WhatsApp and Nuga Best must confirm the order. The website cannot verify M-PESA transactions. The E5 Foot Massager listed price is provisional due to two conflicting earlier price lists; the NM2500 price is awaiting confirmation. Some supplied product images have low native resolution.
+No online payments are collected by this website. Order and booking requests are confirmed by the business through WhatsApp.
 
 
-## WhatsApp configured
-Official business WhatsApp: +254 748 744 688. The website uses 254748744688 in settings.js. Test the product order, cart and booking links before publishing.
+HOMEPAGE BANNER REPLACEMENT (18 Nov 2026)
+- Hero artwork: assets/nuga-best-homepage-banner-hd.png, 1672 x 941 original PNG.
+- Book a Session (left printed CTA) is an accessible clickable overlay linking to contact.html.
+- Shop Products (right printed CTA) links to shop-products.html.
+- On mobile the same overlays remain clickable, with additional accessible text buttons below the artwork.
+- WhatsApp configured: +254 748 744 688.
+- To publish on GitHub Pages, upload the *contents* of this folder to repository root, not the parent folder.

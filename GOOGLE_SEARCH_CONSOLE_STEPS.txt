@@ -1,0 +1,6 @@
+1. Publish website and retrieve the exact live URL.
+2. Run generate_seo_urls.py with that URL, then re-upload changed HTML, sitemap.xml, robots.txt.
+3. Open https://search.google.com/search-console/ and add URL-prefix property or domain property.
+4. Verify property (GitHub Pages URL prefix may offer HTML file / HTML tag; custom domain may require DNS TXT).
+5. Submit sitemap.xml address, and request indexing for your homepage URL.
+6. Google decides indexing and ranking; setup does not guarantee immediate appearance.

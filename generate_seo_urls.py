@@ -19,8 +19,8 @@ for file in PAGES:
  for tag in soup.select('link[rel=canonical],meta[property="og:url"],meta[property="og:image"],meta[name="twitter:image"]'):tag.decompose()
  url=urljoin(base,file)
  canonical=soup.new_tag('link',rel='canonical',href=url);soup.head.append(canonical)
- for prop,val in [('og:url',url),('og:image',urljoin(base,'assets/vip-hero.webp'))]: soup.head.append(soup.new_tag('meta',attrs={'property':prop,'content':val}))
- soup.head.append(soup.new_tag('meta',attrs={'name':'twitter:image','content':urljoin(base,'assets/vip-hero.webp')}))
+ for prop,val in [('og:url',url),('og:image',urljoin(base,'assets/nuga-best-homepage-banner-hd.png'))]: soup.head.append(soup.new_tag('meta',attrs={'property':prop,'content':val}))
+ soup.head.append(soup.new_tag('meta',attrs={'name':'twitter:image','content':urljoin(base,'assets/nuga-best-homepage-banner-hd.png')}))
  for tag in soup.find_all('script',type='application/ld+json'):
   import json
   obj=json.loads(tag.string or '{}'); obj['url']=url
