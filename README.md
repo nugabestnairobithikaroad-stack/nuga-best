@@ -45,3 +45,6 @@ Final slider/map correction: full-width embedded Google map of the Garden City M
 
 
 2026-11-18 homepage update: The hero banner was replaced with the user-supplied `Nuga Best Wellness Therapy Poster(3).png` (1672×941), and the banner hotspot links plus mobile hero buttons were removed. The menu, booking page, shop page, WhatsApp checkout and SEO files remain as before.
+
+
+Homepage update: Two larger functional CTA buttons are placed BELOW the unchanged banner image. Book a Session opens the contact/booking form, Shop Products opens the catalogue. All other pages and sitemap are retained. If Search Console previously verified ownership via an HTML file, DO NOT delete that verification file from your GitHub repository when updating the website.
