@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://nugabestnairobithikaroad-stack.github.io/nuga-best/sitemap.xml
