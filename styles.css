@@ -270,3 +270,17 @@ nav.nav-links a.active{color:var(--gold-bright)}
 @media(max-width:700px){.below-banner-actions{gap:12px;margin-top:18px}.below-banner-btn{min-height:64px;padding:12px 9px;font-size:clamp(14px,3.5vw,19px);gap:6px;border-radius:12px}.below-banner-btn .action-icon{font-size:1em}}
 @media(max-width:370px){.below-banner-btn{font-size:13px;gap:4px}}
 @media(prefers-reduced-motion:reduce){.below-banner-btn,.below-banner-btn .action-arrow{transition:none}}
+
+/* MOBILE CTA VISIBILITY FIX — explicit visibility, no horizontal clipping */
+.below-banner-actions{position:relative;z-index:2;visibility:visible;opacity:1;overflow:visible}
+.below-banner-actions .below-banner-btn{visibility:visible;opacity:1;min-width:0;max-width:100%;text-align:center}
+@media(max-width:700px){
+  .vip-hero{overflow:visible;padding-bottom:30px}
+  .vip-shell{overflow:visible}
+  .below-banner-actions{display:grid!important;grid-template-columns:minmax(0,1fr)!important;width:100%;max-width:520px;gap:14px;margin:20px auto 0;padding:0 4px}
+  .below-banner-actions .below-banner-btn{display:flex!important;width:100%;min-height:66px;padding:13px 17px;white-space:normal;overflow-wrap:normal;font-size:clamp(18px,5vw,22px);line-height:1.2;border-radius:14px;gap:12px;justify-content:center}
+  .below-banner-btn .action-icon,.below-banner-btn .action-arrow{flex:0 0 auto}
+}
+@media(max-width:360px){
+ .below-banner-actions .below-banner-btn{font-size:18px;gap:9px;padding:12px 9px}
+}

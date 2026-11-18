@@ -48,3 +48,6 @@ Final slider/map correction: full-width embedded Google map of the Garden City M
 
 
 Homepage update: Two larger functional CTA buttons are placed BELOW the unchanged banner image. Book a Session opens the contact/booking form, Shop Products opens the catalogue. All other pages and sitemap are retained. If Search Console previously verified ownership via an HTML file, DO NOT delete that verification file from your GitHub repository when updating the website.
+
+
+Mobile button fix (18 Nov 2026): The homepage Book a Session and Shop Products actions are explicitly visible and display as two full-width, vertically stacked buttons beneath the banner on narrow screens. No buttons are embedded in the banner image.
