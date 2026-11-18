@@ -19,18 +19,18 @@
 .vip-shell{width:min(1510px,calc(100% - 40px))}
 .vip-artwork{position:relative;isolation:isolate;background:#061826;border-radius:24px;overflow:hidden;border:1px solid rgba(221,182,102,.55);box-shadow:0 24px 65px rgba(0,0,0,.28)}
 .vip-artwork>img{display:block;width:100%;height:auto;object-fit:contain;aspect-ratio:1672 / 941}
-.vip-hotspot{position:absolute;z-index:4;display:block;border-radius:9px}
-.vip-hotspot:focus-visible{outline:3px solid #fff;outline-offset:-3px;box-shadow:0 0 0 6px #f2cb7d}
-.vip-book{left:3.85%;top:75.1%;width:22.0%;height:9.3%}
-.vip-shop{left:26.6%;top:75.1%;width:22.0%;height:9.3%}
-.vip-mobile-actions{display:none;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:17px}
+
+
+
+
+
 /* Original images use contain; never crop logos, equipment or text. */
 .featured-photo img,.product-photo img,.mini-product img,.experience-frame img,.poster img{object-fit:contain!important}
 .featured-photo,.product-photo{background:#ece7df}
 .featured-photo img,.product-photo img{max-width:100%;max-height:100%}
 .poster{height:auto;min-height:310px;padding:12px}
 .poster img{width:100%;height:auto;max-height:470px;object-fit:contain!important}
-@media(max-width:740px){.vip-hero{padding:15px 0 20px}.vip-shell{width:calc(100% - 20px)}.vip-artwork{border-radius:12px}.vip-hotspot{display:block}.vip-mobile-actions{display:flex}.vip-mobile-actions a{flex:1;min-width:130px;text-align:center}.poster img{max-height:none}}
+@media(max-width:740px){.vip-hero{padding:15px 0 20px}.vip-shell{width:calc(100% - 20px)}.vip-artwork{border-radius:12px}.poster img{max-height:none}}
 
 /* VIP horizontal navigation: each item in its own column, never wraps or drops down. */
 .header .navrow{display:flex;align-items:center;flex-wrap:nowrap;gap:clamp(10px,1.4vw,22px)}
@@ -143,8 +143,8 @@ nav.nav-links a.active{color:var(--gold-bright)}
 
 /* Nuga Best contact and map refinements */
 .vip-artwork>img{width:100%;height:auto;aspect-ratio:1672 / 941;object-fit:contain}
-.vip-book{left:3.85%;top:75.1%;width:22.0%;height:9.3%}
-.vip-shop{left:26.6%;top:75.1%;width:22.0%;height:9.3%}
+
+
 .contact-fast{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 28px}
 .contact-fast a{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 15px;border:1px solid rgba(225,188,112,.5);border-radius:11px;color:#f3debb;background:rgba(8,29,45,.66);font-weight:700;overflow-wrap:anywhere}
 .contact-fast a:hover{background:rgba(225,188,112,.16)}
@@ -157,7 +157,7 @@ nav.nav-links a.active{color:var(--gold-bright)}
 .footer-contact a:hover{text-decoration:underline}
 @media(max-width:740px){.contact-fast{flex-direction:column}.contact-fast a{width:100%;text-align:center}.location-reference img{max-height:none}}
 
-.vip-hotspot{cursor:pointer;touch-action:manipulation}.vip-hotspot:hover{background:rgba(255,255,255,.08)}
+
 
 
 /* --- 2026 refresh: sliders, map fill, improved button animations --- */

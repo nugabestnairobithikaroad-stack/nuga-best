@@ -42,3 +42,6 @@ Latest update: added responsive auto-sliders to the Contact and Shop pages, impr
 
 
 Final slider/map correction: full-width embedded Google map of the Garden City Mall area (NOT a confirmed pin for Nuga Best); removed squeezed screenshot, deleted unwanted third contact slider slide, simplified captions, and switched sliders to supplied equipment photos.
+
+
+2026-11-18 homepage update: The hero banner was replaced with the user-supplied `Nuga Best Wellness Therapy Poster(3).png` (1672×941), and the banner hotspot links plus mobile hero buttons were removed. The menu, booking page, shop page, WhatsApp checkout and SEO files remain as before.
