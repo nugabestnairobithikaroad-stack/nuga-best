@@ -503,3 +503,32 @@ nav.nav-links a.active{color:var(--gold-bright)}
   .header .brand img {width:54px!important;height:54px!important;min-width:54px!important}
   .header .brand strong {font-size:20px!important}
 }
+
+
+/* Updated Nuga Best badge: lettering is contained within the actual round logo image. */
+.header .brand img {
+  width:88px!important;height:88px!important;min-width:88px!important;
+  padding:0!important;border:0!important;background:transparent!important;
+  border-radius:50%!important;object-fit:contain!important;
+  filter:drop-shadow(0 3px 5px rgba(0,0,0,.22));
+}
+.header .brand{gap:13px!important;align-items:center}
+.header .navrow{min-height:104px}
+.footer .brand img{
+  width:75px!important;height:75px!important;min-width:75px!important;
+  border:0!important;padding:0!important;background:transparent!important;
+  border-radius:50%!important;object-fit:contain!important;
+}
+@media(max-width:1050px){
+  .header .brand img{width:72px!important;height:72px!important;min-width:72px!important}
+  .header .navrow{min-height:88px!important}
+}
+@media(max-width:650px){
+  .header .brand img{width:65px!important;height:65px!important;min-width:65px!important}
+  .header .navrow{min-height:78px!important}
+  .header .brand{gap:7px!important}
+  .header .brand strong{font-size:18px!important}
+  .header .brand small{font-size:8px!important;letter-spacing:.035em!important}
+  .footer .brand img{width:63px!important;height:63px!important;min-width:63px!important}
+}
+@media(max-width:360px){.header .brand img{width:58px!important;height:58px!important;min-width:58px!important}}

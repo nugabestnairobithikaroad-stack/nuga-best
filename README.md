@@ -66,3 +66,6 @@ Visibility upgrade v2: header logo and lettering made substantially larger; home
 
 
 Brand clarity update: added “Thermal Wellness & Home Equipment” directly beneath the Nuga Best logo text in the header of all six pages. This states the purpose of the website without removing the original logo or location line.
+
+
+NEW: Circular Nuga Best Thika Road logo with large text INSIDE the badge. Updated header, footer and favicon on all six pages. Extra description outside logo removed. All business pages, WhatsApp contact, map and SEO retained. Do not overwrite/remove your Google Search Console verification HTML file in the GitHub repository.
