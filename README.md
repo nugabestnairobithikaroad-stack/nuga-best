@@ -63,3 +63,6 @@ Latest update: removed the extra Shop Products title, introduction, category fil
 Latest update: Enlarged the original Nuga Best logo image and brand lettering in the header, and increased the font size of the four homepage benefit labels across mobile, tablet and desktop screens. Other content and features unchanged.
 
 Visibility upgrade v2: header logo and lettering made substantially larger; homepage four feature labels increased to 19px desktop and 17–19px mobile; under 420px feature labels stack vertically for clear legibility.
+
+
+Brand clarity update: added “Thermal Wellness & Home Equipment” directly beneath the Nuga Best logo text in the header of all six pages. This states the purpose of the website without removing the original logo or location line.
