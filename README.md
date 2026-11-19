@@ -57,3 +57,7 @@ Mobile button fix (18 Nov 2026): The homepage Book a Session and Shop Products a
 The exact new banner is installed at `assets/nuga-best-homepage-banner-hd.png` (1672 × 941 pixels). It is displayed completely, without cropping. The two visible buttons in the image have matching clickable HTML areas and open `contact.html?intent=booking` and `shop-products.html`. Large mobile buttons also appear just beneath the banner so that Android and iPhone visitors can use them easily.
 
 **Important:** If your Google Search Console verification HTML file is already stored in the GitHub repository, do not delete it when uploading this package. Do not wipe the repository or use a workflow that removes files outside this package.
+
+Latest update: removed the extra Shop Products title, introduction, category filter chips, search field, and introductory cart strip. Product cards now start immediately; a compact View Cart button remains beneath them so multi-item WhatsApp ordering still works.
+
+Latest update: Enlarged the original Nuga Best logo image and brand lettering in the header, and increased the font size of the four homepage benefit labels across mobile, tablet and desktop screens. Other content and features unchanged.

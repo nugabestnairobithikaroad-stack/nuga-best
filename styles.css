@@ -371,3 +371,54 @@ nav.nav-links a.active{color:var(--gold-bright)}
   .mobile-hero-actions .btn { display:flex; width:100%; min-height:58px; font-size:19px; font-weight:800; letter-spacing:.01em; border-radius:13px; }
 }
 @media (prefers-reduced-motion:reduce) { .hero-image-action { transition:none; } }
+
+/* Clean catalogue view — products appear immediately under site navigation */
+.section-shop{padding-top:24px!important}
+.catalogue-cart-footer{display:flex;justify-content:flex-end;margin:24px 0 8px}
+.catalogue-cart-footer .cart-open{font-size:15px;min-height:52px}
+@media(max-width:650px){.section-shop{padding-top:12px!important}.catalogue-cart-footer .cart-open{width:100%;font-size:16px}}
+
+/* Increased Nuga Best branding and homepage benefit-label visibility */
+.header .brand{gap:14px;min-width:0}
+.header .brand img{width:70px;height:70px;min-width:70px;object-fit:contain;padding:3px;border:2px solid #e5bd70}
+.header .brand strong{font-size:23px;line-height:1.12;letter-spacing:.012em;font-weight:850}
+.header .brand small{font-size:11px;line-height:1.45;letter-spacing:.13em;font-weight:850;white-space:nowrap}
+.header .navrow{min-height:94px;gap:16px}
+.header .nav-links{gap:12px}
+.trust-grid>div{padding:23px 16px;gap:13px;font-size:16px;line-height:1.45;font-weight:750;justify-content:flex-start}
+.trust-grid .trust-icon{font-size:27px;flex:0 0 auto}
+.footer .brand img{width:63px;height:63px;min-width:63px}
+.footer .brand strong{font-size:21px}
+.footer .brand small{font-size:10px}
+@media(min-width:901px) and (max-width:1150px){
+ .header .brand img{width:60px;height:60px;min-width:60px}
+ .header .brand strong{font-size:19px}
+ .header .brand small{font-size:9px}
+ .header .nav-links{gap:8px}
+ .header .nav-links a{font-size:12px}
+ .trust-grid>div{font-size:14px}
+}
+@media(max-width:900px){
+ .header .navrow{min-height:82px!important}
+ .header .brand img{width:60px!important;height:60px!important;min-width:60px!important}
+ .header .brand strong{font-size:20px!important}
+ .header .brand small{font-size:10px!important;letter-spacing:.07em!important}
+ .trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .trust-grid>div{font-size:15px;padding:20px 16px}
+}
+@media(max-width:600px){
+ .header .brand{gap:9px}
+ .header .brand img{width:54px!important;height:54px!important;min-width:54px!important}
+ .header .brand strong{font-size:19px!important;line-height:1.1}
+ .header .brand small{font-size:9px!important;letter-spacing:.035em!important}
+ .header .navrow{min-height:75px!important}
+ .trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .trust-grid>div{font-size:14px!important;gap:9px;line-height:1.35;padding:18px 10px}
+ .trust-grid .trust-icon{font-size:23px}
+}
+@media(max-width:360px){
+ .header .brand img{width:48px!important;height:48px!important;min-width:48px!important}
+ .header .brand strong{font-size:17px!important}
+ .header .brand small{font-size:8px!important}
+ .trust-grid>div{font-size:13px!important}
+}
