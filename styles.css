@@ -357,3 +357,17 @@ nav.nav-links a.active{color:var(--gold-bright)}
 }
 @media(hover:none){.btn:hover,.below-banner-btn:hover,.enquire-link:hover{transform:none!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Full-resolution homepage banner with live clickable button areas. */
+.vip-artwork { position:relative; overflow:hidden; }
+.vip-artwork > img { display:block; width:100%; height:auto; aspect-ratio:1672/941; object-fit:contain; }
+.hero-image-action { position:absolute; z-index:5; display:block; border-radius:14px; cursor:pointer; background:transparent; transition:box-shadow .18s ease; }
+.hero-image-action:focus-visible { outline:3px solid #fff; outline-offset:2px; box-shadow:0 0 0 6px #c99c42; }
+.hero-image-book { left:2.4%; top:49.9%; width:36.7%; height:13.7%; }
+.hero-image-shop { left:2.4%; top:65.5%; width:36.7%; height:12.7%; }
+.mobile-hero-actions { display:none; }
+@media(max-width:700px) {
+  .mobile-hero-actions { display:grid; grid-template-columns:1fr; gap:12px; margin:16px auto 0; max-width:460px; }
+  .mobile-hero-actions .btn { display:flex; width:100%; min-height:58px; font-size:19px; font-weight:800; letter-spacing:.01em; border-radius:13px; }
+}
+@media (prefers-reduced-motion:reduce) { .hero-image-action { transition:none; } }

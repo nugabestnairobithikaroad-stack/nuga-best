@@ -51,3 +51,9 @@ Homepage update: Two larger functional CTA buttons are placed BELOW the unchange
 
 
 Mobile button fix (18 Nov 2026): The homepage Book a Session and Shop Products actions are explicitly visible and display as two full-width, vertically stacked buttons beneath the banner on narrow screens. No buttons are embedded in the banner image.
+
+
+## Latest homepage banner (HD)
+The exact new banner is installed at `assets/nuga-best-homepage-banner-hd.png` (1672 × 941 pixels). It is displayed completely, without cropping. The two visible buttons in the image have matching clickable HTML areas and open `contact.html?intent=booking` and `shop-products.html`. Large mobile buttons also appear just beneath the banner so that Android and iPhone visitors can use them easily.
+
+**Important:** If your Google Search Console verification HTML file is already stored in the GitHub repository, do not delete it when uploading this package. Do not wipe the repository or use a workflow that removes files outside this package.
