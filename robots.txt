@@ -1,6 +1,3 @@
 User-agent: *
-Disallow: /dashboard.html
-Disallow: /dashboard-login.html
-Disallow: /dashboard-setup.html
-Disallow: /api/
-Sitemap: https://orelqum.pages.dev/sitemap.xml
+Allow: /
+Sitemap: https://nugabestnairobithikaroad-stack.github.io/nuga-best/sitemap.xml

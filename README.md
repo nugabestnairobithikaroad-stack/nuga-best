@@ -61,3 +61,5 @@ The exact new banner is installed at `assets/nuga-best-homepage-banner-hd.png` (
 Latest update: removed the extra Shop Products title, introduction, category filter chips, search field, and introductory cart strip. Product cards now start immediately; a compact View Cart button remains beneath them so multi-item WhatsApp ordering still works.
 
 Latest update: Enlarged the original Nuga Best logo image and brand lettering in the header, and increased the font size of the four homepage benefit labels across mobile, tablet and desktop screens. Other content and features unchanged.
+
+Visibility upgrade v2: header logo and lettering made substantially larger; homepage four feature labels increased to 19px desktop and 17–19px mobile; under 420px feature labels stack vertically for clear legibility.
