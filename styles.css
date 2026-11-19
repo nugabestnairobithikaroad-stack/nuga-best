@@ -371,9 +371,3 @@ nav.nav-links a.active{color:var(--gold-bright)}
   .mobile-hero-actions .btn { display:flex; width:100%; min-height:58px; font-size:19px; font-weight:800; letter-spacing:.01em; border-radius:13px; }
 }
 @media (prefers-reduced-motion:reduce) { .hero-image-action { transition:none; } }
-
-/* Clean catalogue view — products appear immediately under site navigation */
-.section-shop{padding-top:24px!important}
-.catalogue-cart-footer{display:flex;justify-content:flex-end;margin:24px 0 8px}
-.catalogue-cart-footer .cart-open{font-size:15px;min-height:52px}
-@media(max-width:650px){.section-shop{padding-top:12px!important}.catalogue-cart-footer .cart-open{width:100%;font-size:16px}}
